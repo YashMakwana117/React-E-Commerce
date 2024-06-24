@@ -1,10 +1,19 @@
-import './App.css';
+import React from 'react'
+import HomePage from './pages/HomePage/Home'
+import Login from './pages/LoginPage/Login'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Dashbord from './pages/components/Admin/Dashbord';
 
-import HomePage from './pages/home_page'; 
-function App() {
+export default function App() {
   return (
-    <HomePage />
-  );
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/dashbord" element={<Dashbord/>}/>
+        </Routes>
+      </Router>
+    </div>
+  )
 }
-
-export default App;
