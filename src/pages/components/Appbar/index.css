@@ -22,7 +22,9 @@
     align-items: center;
   }
   
-  .logo {
+  #logo {
+    background-size: contain;
+    width: 90px;
     height: 40px;
     margin-right: 20px;
   }

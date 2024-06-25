@@ -1,0 +1,546 @@
+/* top bar */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#timg {
+    background: cover;
+    width: 120px;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.end {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#btn {
+    border: none;
+    width: 100px;
+    height: 35px;
+    border-radius: 6px;
+    background-color: #ffedf4;
+    justify-content: center;
+    align-self: center;
+    margin-right: 10px;
+}
+
+#lag {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+/* .nn{
+    
+    object-fit: contain;
+    width: 20px;
+    height: 10px;
+    margin-right: 20px;
+} */
+
+/* end */
+
+.dashboard {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    min-height: 100vh; /* Ensure full viewport height */
+    overflow-x: scroll; /* Prevent horizontal scrolling */
+}
+
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 280px; /* Default margin for non-collapsed sidebar */
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.collapsed + .main-content {
+    margin-left: 0; /* Adjust margin when sidebar is collapsed */
+}
+
+#greet{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.overview p {
+    font-size: 18px;
+}
+
+.overview-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to new line on smaller screens */
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    flex: 1 1 calc(33% - 20px); /* Cards grow to fill available space */
+    max-width: calc(33% - 20px); /* Cards take up maximum of one-third minus margin */
+}
+
+/* total earning */
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.dollar {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: white;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#innerdoller{
+    background-color:#fb0a5a;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dd{
+    width: 20px;
+    height: 15px;
+    align-self: center;
+}
+
+#earn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 40px;
+}
+
+#earn span {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+
+/* total order */
+
+.orders {
+    background-color: #ff7043;
+    color: #fff;
+}
+
+.orders .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.orders .icon {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: white;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orders #innerIcon {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orders #orderIcon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    align-self: center;
+}
+
+.orders #orderDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 40px;
+}
+
+.orders #orderDetails span {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.orders #orderAmount {
+    color: white;
+    font-size: 20px;
+    margin: 0;
+}
+
+/* total coustmer */
+
+
+.customers {
+    background-color: #7e57c2;
+    color: #fff;
+}
+
+.customers .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.customers .icon {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: white;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.customers #innerIcon {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.customers #customerIcon {
+    width: 20px;
+    height: 20px;
+    align-self: center;
+}
+
+.customers #customerDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+}
+
+.customers #customerDetails span {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.customers #customerCount {
+    color: white;
+    font-size: 20px;
+    margin: 0;
+}
+
+/* end */
+
+/* total product */
+
+.products {
+    background-color: #42a5f5;
+    color: #fff;
+}
+
+.products .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.products .icon {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: white;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products #innerIcon {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products #productIcon {
+    width: 20px;
+    height: 20px;
+    align-self: center;
+}
+
+.products #productDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 40px;
+}
+
+.products #productDetails span {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.products #productCount {
+    color: white;
+    font-size: 20px;
+    margin: 0;
+}
+
+
+/* end */
+
+
+#ss {
+    color: white;
+    font-size: 20px;
+    margin: 0;
+}
+
+#TotalOrders, #Pending, #confirmed, #ongoing, #delivered, #canceled, #return, #reject {
+    width: 220px;
+    height: 60px;
+}
+
+.card h2 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.earnings {
+    background-color: #fb0a5a;
+    color: #fff;
+}
+
+.orders {
+    background-color: #ff7043;
+    color: #fff;
+}
+
+.customers {
+    background-color: #6a45fe;
+    color: #fff;
+}
+
+.products {
+    background-color: #426eff;
+    color: #fff;
+}
+
+.order-stats {
+    margin-top: 40px;
+}
+
+.order-stats h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.stats-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.stat-card {
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 260px;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+#Pending {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+.pending {
+    display: flex;
+    align-self: center;
+    gap: 5px;
+}
+
+.pending-label {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+#p {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top: 15px;
+}
+
+.zero {
+    margin-top: -23px; 
+    font-weight: 700;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0; /* Override default margin for smaller screens */
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar:not(.collapsed) {
+        transform: translateX(0);
+    }
+}
+
+/* For screens smaller than 768px (e.g., mobile phones) */
+@media (max-width: 767px) {
+    .dashboard {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .main-content {
+        margin-left: 0; /* Adjust margin to stack content properly */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .card {
+        max-width: 100%; /* Cards take full width */
+        margin: 10px 0; /* Adjust margin for stacking */
+    }
+
+    .stat-card {
+        width: 100%; /* Stat cards take full width */
+        margin-bottom: 10px; /* Adjust margin for stacking */
+    }
+}
+
+/* For screens between 768px and 1023px (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .sidebar {
+        transform: none; /* Reset sidebar transform */
+    }
+
+    .main-content {
+        margin-left: 60px; /* Adjust margin for smaller sidebar */
+    }
+}
+
+/* For screens 1024px and above (e.g., laptops, desktops) */
+@media (min-width: 1024px) {
+    .sidebar {
+        transform: none; /* Reset sidebar transform */
+    }
+
+    .main-content {
+        margin-left: 280px; /* Default margin for larger screens */
+    }
+}
+
+
+
+/* new */
+
+
+/* Larger mobile devices (e.g., iPhone 14 Pro Max, Samsung S20, Pixel 6) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 20px); /* Two cards per row */
+        max-width: calc(50% - 20px);
+    }
+}
+
+/* Small mobile devices (e.g., phones with width less than 768px) */
+@media (max-width: 767px) {
+    .card {
+        flex: 1 1 100%; /* Full width on smaller screens */
+        max-width: 100%;
+    }
+}
+
+/* Tablets and below */
+@media (max-width: 1024px) {
+    .main-content {
+        margin-left: 0; /* Override default margin for smaller screens */
+        padding: 10px;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar:not(.collapsed) {
+        transform: translateX(0);
+    }
+}
+
+/* Larger screens (laptops and desktops) */
+@media (min-width: 1025px) {
+    .main-content {
+        margin-left: 280px; /* Default margin for larger screens */
+    }
+}

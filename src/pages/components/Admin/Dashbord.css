@@ -1,13 +1,7 @@
-.dashboard {
+/* .dashboard {
     display: flex;
     font-family: Arial, sans-serif;
-    justify-content: flex-end; /* Move the content to the right side */
-  }
-  
-  .sidebar {
-    width: 250px;
-    background-color: #f5f5f5;
-    padding: 20px;
+    justify-content: flex-end;
   }
   
   .logo {
@@ -16,35 +10,11 @@
     margin-bottom: 20px;
   }
   
-  nav ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  nav ul li {
-    margin: 10px 0;
-    font-size: 18px;
-  }
   
   .main-content {
     flex-grow: 1;
     padding: 20px;
   }
-  
-  /* .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  } */
-  
-  /* .language-switcher,
-  .user-info {
-    font-size: 16px;
-  } */
-  
   
   .overview h1 {
     font-size: 24px;
@@ -61,7 +31,6 @@
   }
   
   .card {
-    /* flex: 1; */
     background-color: #fff;
     padding: 20px;
     margin: 0 10px;
@@ -122,7 +91,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 260px;
-    height: 100px; /* Adjusted height to accommodate the content */
+    height: 100px; 
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -179,4 +148,7 @@
     margin-top: -23px; 
     font-weight: 700;
   }
-  
+   */
+
+
+   /* gpt css */

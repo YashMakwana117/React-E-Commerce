@@ -20,7 +20,7 @@ export default function Index() {
     <>
       <nav className="navbar">
         <div className="navbar-left">
-          <img src={order360Image} alt="Order 360 Logo" className="logo" />
+          <img src={order360Image} alt="Order 360 Logo" id="logo" />
           <a href="#home" className="nav-link">Home</a>
           <div className="dropdown">
             <button className="dropbtn">Categories</button>
