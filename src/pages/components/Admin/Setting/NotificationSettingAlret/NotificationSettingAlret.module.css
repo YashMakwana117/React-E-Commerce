@@ -1,0 +1,288 @@
+.NotificationSettingAlretMain{
+    display: flex;
+    flex-direction: column;
+    /* background-color: black; */
+    /* margin-right: 500px; */
+    height: 100%;
+    width: 800px;
+}
+
+
+/* ------------------------------------------------------------- */
+/* .NotificationSettingTabbtn{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+}
+
+.NotificationSettingAlretTabbtn{
+    background-color: white;
+    cursor: pointer;
+    width: 100%;
+    justify-content: space-evenly;
+    height: 35px;
+    border: none;
+    border-radius: 6px;
+}
+
+.NotificationSettingAlretTabbtn:hover{
+    color: red;
+    background-color: #f1f1f1;
+}
+
+.NotificationSettingAlretTabbtn:focus,
+.NotificationSettingAlretTabbtn.active {
+  background-color: red;
+  color: white;
+  border-radius: 6px;
+  transition: all ease 2s;
+} */
+
+/* ----------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------- */
+
+.NotificationSettingTabbtn {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+  
+  .NotificationSettingAlretTabbtn {
+    background-color: transparent;
+    cursor: pointer;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 35px;
+    border: none;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+  
+  .NotificationSettingAlretTabbtn:hover {
+    color: red;
+    /* background-color: #f1f1f1; */
+  }
+  
+  .NotificationSettingAlretTabbtn:focus,
+  .NotificationSettingAlretTabbtn.active {
+    color: white;
+  }
+  
+  .NotificationSettingTabbtn::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: calc(33.33% - 6.66px); /* Adjusting for the gap */
+    background-color: red;
+    transition: transform 0.3s ease;
+    z-index: 0;
+    border-radius: 6px;
+  }
+  
+  .NotificationSettingTabbtn[data-active='Mail']::before {
+    transform: translateX(0%);
+  }
+  
+  .NotificationSettingTabbtn[data-active='SMS']::before {
+    transform: translateX(calc(100% + 10px)); /* Adjusting for the gap */
+  }
+  
+  .NotificationSettingTabbtn[data-active='Push']::before {
+    transform: translateX(calc(200% + 20px)); /* Adjusting for the gap */
+  }
+
+
+/* ------------------------------------------------------------------------------- */
+
+.NotificationSettingAlretMain-inner{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.9);
+}
+
+.NotificationSettingAlretMain-heading-Mail h2{
+    color: black;
+    font-weight: 600;
+}
+
+.NotificationSettingAlretMain-heading-SMS h2{
+    color: black;
+    font-weight: 600;
+    /* display: none; */
+}
+
+.NotificationSettingAlretMain-heading-PUSH h2{
+    color: black;
+    font-weight: 600;
+    /* display: none; */
+}
+
+.NotificationSettingAlretMain-inner hr{
+    width: 100%;
+}
+
+.NotificationSettingAlretMainbelowContent {
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+}
+
+.NotificationRow {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 20px; */
+}
+
+.NotificationItem, .NotificationItemFull {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.NotificationItemFull {
+    width: 100%;
+}
+
+.NotificationInput {
+    height: 40px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+
+
+.NotificationToggle {
+    display: flex;
+    justify-content: flex-end;
+    /* margin-top: 10px; */
+}
+
+.SaveButton {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Switch styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: red;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+
+@media (max-width: 576px) {
+    .NotificationRow {
+        flex-direction: column;
+    }
+
+    .NotificationItem, .NotificationItemFull {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .NotificationSettingAlretMain {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .NotificationInput {
+        width: 100%;
+    }
+
+    .SaveButton {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 992px) {
+    .NotificationSettingAlretMain {
+        width: 100%;
+    }
+
+    .NotificationInput {
+        width: 100%;
+    }
+
+    .SaveButton {
+        align-self: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .NotificationSettingAlretMain {
+        width: 100%;
+    }
+
+    .NotificationInput {
+        width: 100%;
+    }
+}
+
+@media (min-width:1500px){
+    .NotificationSettingAlretMain {
+        width: 800px;
+    }
+
+    .NotificationInput {
+        width: 100%;
+    }
+}

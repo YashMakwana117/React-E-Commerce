@@ -1,0 +1,239 @@
+.ProductAttributeMain{
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.9);
+    margin-right: 500px;
+    padding: 20px;
+}
+
+
+.ProductAttributeMainHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ProductAttributeMainHeader h2{
+    color: black;
+    font-size: 20px;
+}
+
+.addattibutebtn{
+    width: 20%;
+    height: 35px;
+    align-self: center;
+    border-radius: 6px;
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.addattibutebtn:hover{
+    background-color: rgb(230, 2, 2);
+    transform: scale(1.05);
+}
+
+.addattibutebtn:active{
+    transform: scale(0.95);
+}
+
+.ProductAttributeMain hr{
+    width: 100%;
+}
+
+.SliderImageSettingIcon{
+    display: flex;
+    flex-direction: row;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.table th, .table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+.viewButton, .editButton, .deleteButton {
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.viewButton {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.editButton {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.deleteButton {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.viewButton:hover, .editButton:hover, .deleteButton:hover{
+    transform: scale(1.05);
+}
+
+.viewButton:active, .editButton:active, .deleteButton:active{
+    transform: scale(0.95);
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.modalContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .inputField {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+
+
+/* Existing CSS */
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .ProductAttributeMain {
+        margin-right: 200px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .ProductAttributeMain {
+        margin-right: 100px;
+        padding: 10px;
+    }
+
+    .addattibutebtn {
+        width: 30%;
+    }
+
+    .header .title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ProductAttributeMain {
+        margin-right: 50px;
+        padding: 10px;
+    }
+
+    .addattibutebtn {
+        width: 40%;
+    }
+
+    .table th, .table td {
+        padding: 8px;
+    }
+
+    .icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .header .title {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .ProductAttributeMain {
+        margin-right: 0;
+        padding: 5px;
+    }
+
+    .ProductAttributeMainHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .addattibutebtn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .table th, .table td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .viewButton, .editButton, .deleteButton {
+        padding: 3px 5px;
+    }
+
+    .header .title {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .addattibutebtn {
+        width: 100%;
+        font-size: 14px;
+        height: 30px;
+    }
+
+    .icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    .table th, .table td {
+        font-size: 10px;
+        padding: 4px;
+    }
+
+    .header .title {
+        font-size: 10px;
+    }
+}

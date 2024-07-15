@@ -1,0 +1,42 @@
+.conta {
+    display: flex;
+    justify-content: end;
+    background-color: #f2f2f2;
+}
+
+
+.piechart {
+    background-color: #fff;
+    margin: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0.1, 0.1, 0.1, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 450px;
+    padding: 20px;
+    position: relative;
+}
+
+.piechart:hover {
+    box-shadow: 0 2px 4px rgba(0.9, 0.9, 0.9, 0.5);
+}
+
+.piechart > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.piechart h2 {
+    color: black;
+    align-self: flex-start;
+    margin-bottom: 10px;
+}
+
+.piechart hr {
+    width: 100%;
+    margin-bottom: 20px;
+}

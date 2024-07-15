@@ -1,0 +1,144 @@
+.compony-main{
+  margin-right: 200px;
+}
+
+.companyForm {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.companyForm h2{
+  color: black;
+}
+
+.formRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.formGroup {
+  flex: 1;
+  margin-right: 15px;
+}
+
+.formGroup:last-child {
+  margin-right: 0;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.companyForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #666;
+}
+
+.companyForm input,
+.companyForm select,
+.companyForm textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.coordinateInputs,
+.phoneInput {
+  display: flex;
+}
+
+.coordinateInputs input,
+.phoneInput input {
+  flex: 1;
+}
+
+.coordinateInputs input:first-child,
+.phoneInput select {
+  margin-right: 10px;
+}
+
+.companyForm textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.saveBtn {
+  width: 200px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.saveBtn:hover {
+  background-color: #e64a19;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 1024px) {
+  .compony-main {
+    margin-right: 0;
+  }
+
+  .companyForm {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .compony-main{
+    width: 350px;
+  }
+  .formRow {
+    flex-direction: column;
+  }
+
+  .formGroup {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .coordinateInputs,
+  .phoneInput {
+    flex-direction: column;
+  }
+
+  .coordinateInputs input:first-child,
+  .phoneInput select {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .saveBtn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  
+  .companyForm {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .companyForm input,
+  .companyForm select,
+  .companyForm textarea {
+    font-size: 14px;
+  }
+
+  .saveBtn {
+    font-size: 14px;
+  }
+}

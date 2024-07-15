@@ -1,0 +1,168 @@
+.drawer-content{
+    /* width: 100%; */
+    width: 500px;
+}
+
+.headerDrawer{
+    margin-top: 20px;
+}
+/* ----------------------------------------------- */
+.drawerEdit{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.drawerEditRowName{
+    display: flex;
+    flex-direction: column;
+}
+
+.drawerEditRowName
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.drawerEditRowEmail{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.drawerEditRowEmail
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* -------------------------------------- */
+
+.drawerEditPhone{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}
+
+.drawerEditRowPhono{
+    display: flex;
+    flex-direction: column;
+}
+
+.drawerEditRowPhono
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.drawerEditRowRadio{
+    display: flex;
+    flex-direction: column;
+}
+/* -------------------------------- */
+
+.drawerSecurity{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.drawerInnerPass{
+    display: flex;
+    flex-direction: column;
+}
+
+.drawerInnerPass
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.drawerInnerConfirmPass{
+    display: flex;
+    flex-direction: column;
+}
+
+.drawerInnerConfirmPass
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#drawerbtnSave{
+    margin-top: 30px;
+    margin-left: 40px;
+    background-color: red;
+}
+
+#drawerbtnClose{
+    margin-top: 30px;
+    margin-left: 40px;
+    background-color: red;
+}
+
+
+
+/* Add these media queries at the end of your CSS file */
+
+/* For tablets and large mobile devices */
+@media screen and (max-width: 768px) {
+    .drawer-content {
+      width: 300px;
+      /* max-width: 500px; */
+    }
+  
+    .drawerEdit, .drawerEditPhone, .drawerSecurity {
+      flex-direction: column;
+    }
+  
+    .drawerEditRowName, .drawerEditRowEmail, .drawerEditRowPhono, .drawerEditRowRadio, .drawerInnerPass, .drawerInnerConfirmPass {
+      width: 80%;
+      margin: 10px auto;
+    }
+  
+    #drawerbtnSave, #drawerbtnClose {
+      margin: 15px auto;
+      display: block;
+      width: 50%;
+    }
+  }
+  
+  /* For small mobile devices */
+  @media screen and (max-width: 480px) {
+    .drawer-content {
+      width: 300px;
+    }
+  
+    .headerDrawer {
+      font-size: 1.5rem;
+    }
+  
+    .drawerEditRowName input[type="text"], 
+    .drawerEditRowEmail input[type="email"], 
+    .drawerEditRowPhono input[type="tel"], 
+    .drawerInnerPass input[type="password"], 
+    .drawerInnerConfirmPass input[type="password"] {
+      font-size: 14px;
+    }
+  
+    .drawerEditRowRadio {
+      margin-top: 15px;
+    }
+  }

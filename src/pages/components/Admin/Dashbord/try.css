@@ -1,10 +1,10 @@
 /* top bar */
 
-.topbar {
+/* .topbar {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 50px;
+    height: 60px;
     background-color: white;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -15,8 +15,9 @@
 #timg {
     background: cover;
     width: 120px;
-    margin-left: 20px;
+    margin-left: 50px;
     align-items: center;
+    
 }
 
 .end {
@@ -27,14 +28,20 @@
 }
 
 #btn {
+    cursor: pointer;
     border: none;
     width: 100px;
     height: 35px;
     border-radius: 6px;
-    background-color: #ffedf4;
+    background-color: #fddfea;
     justify-content: center;
     align-self: center;
     margin-right: 10px;
+    font-weight: 600;
+}
+
+#btn:hover{
+    background-color: #ffc1ea;
 }
 
 #lag {
@@ -44,30 +51,50 @@
     width: 100%;
 }
 
-/* .nn{
+.nimg{
+    cursor: pointer;
+    margin-right: 40px;
+    background-color: #ffebd8;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 6px;
+}
+
+.nimg:hover{
+    background-color: #ffddbd;
+}
+
+.nimg img{
     
-    object-fit: contain;
-    width: 20px;
-    height: 10px;
-    margin-right: 20px;
+    width: 15px;
+    height: 15px;
 } */
 
 /* end */
+
+.tt{
+    width: 100%;
+}
 
 .dashboard {
     display: flex;
     flex-direction: column; /* Stack children vertically */
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
-    min-height: 100vh; /* Ensure full viewport height */
+    height: 100%; /* Ensure full viewport height */
     overflow-x: scroll; /* Prevent horizontal scrolling */
+    overflow-y: scroll;
 }
 
 
 .main-content {
     flex-grow: 1;
     padding: 20px;
-    margin-left: 280px; /* Default margin for non-collapsed sidebar */
+    margin-left: 280px;
     transition: margin-left 0.3s ease-in-out;
 }
 
@@ -347,6 +374,7 @@
     margin: 0;
 }
 
+
 #TotalOrders, #Pending, #confirmed, #ongoing, #delivered, #canceled, #return, #reject {
     width: 220px;
     height: 60px;
@@ -377,6 +405,9 @@
     color: #fff;
 }
 
+
+/* order start */
+
 .order-stats {
     margin-top: 40px;
 }
@@ -389,7 +420,7 @@
 .stats-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     gap: 10px;
 }
 
@@ -399,21 +430,23 @@
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    width: 260px;
+    width: calc(25% - 5px); /* 25% width with a little gap */
     height: 100px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 10px;
+    margin-bottom: 10px; /* Optional: Adds space between rows */
 }
 
+/* pendding below card */
 #Pending {
     display: flex;
     justify-content: start;
     align-items: center;
 }
 
-img {
+.pending img {
     width: 50px;
     height: 50px;
 }
@@ -438,9 +471,248 @@ img {
 }
 
 .zero {
-    margin-top: -23px; 
+    margin-top: -20px; 
     font-weight: 700;
 }
+/* end */
+
+/* total order below card */
+
+#TotalOrders{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.totalorder img {
+    width: 50px;
+    height: 50px;
+}
+
+.totalorder{
+    display: flex;
+    align-self: center;
+    gap: 5px;
+}
+
+.totalorder-label{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+/* end */
+
+/* confirmed order */
+
+#confirmed{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.confirmorder img {
+    width: 50px;
+    height: 50px;
+}
+
+.confirmorder{
+    display: flex;
+    align-self: center;
+    gap: 5px;
+}
+
+.confirm-label{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+/* end */
+
+/* ongoing order start */
+
+#ongoing{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.ongoing img {
+    width: 50px;
+    height: 50px;
+}
+
+.ongoing{
+    display: flex;
+    align-self: center;
+    gap: 5px;
+}
+
+.ongoing-label{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+
+/* end */
+
+/* below card start here */
+
+.belowcard {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    justify-content: space-between;
+}
+
+/* Adjust .stat-card inside .belowcard */
+.belowcard .stat-card {
+    width: calc(25% - 5px); /* 25% width with a little gap */
+    height: 100px;
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px; /*Optional: Adds space between rows */
+}
+
+/* below delivered card */
+
+#delivered{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.belowdelivered img {
+    width: 50px;
+    height: 50px;
+}
+
+.belowdelivered{
+    display: flex;
+    align-self: center;
+    gap: 5px;
+}
+
+.belowdelivered-label{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+/* end */
+
+
+/* below cancled */
+
+#canceled{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.belowcanceled img {
+    width: 50px;
+    height: 50px;
+}
+
+.belowcanceled{
+    display: flex;
+    align-self: center;
+    gap: 5px;
+}
+
+.belowcanceled-label{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+/* end */
+
+
+/* below return start */
+
+#return{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.belowreturn img {
+    width: 50px;
+    height: 50px;
+}
+
+.belowreturn{
+    display: flex;
+    align-self: center;
+    gap: 5px;
+}
+
+.belowreturn-label{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+
+/* end */
+
+
+/* below reject start */
+
+#reject{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.belowreject img {
+    width: 50px;
+    height: 50px;
+}
+
+.belowreject{
+    display: flex;
+    align-self: center;
+    gap: 5px;
+}
+
+.belowreject-label{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+/* end */
+
+
+@media (max-width: 768px) {
+    .belowcard .stat-card {
+        width: calc(50% - 5px); /* 50% width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .belowcard .stat-card {
+        width: 100%; /* Full width for extra small screens */
+    }
+}
+
+/* below 4 card responsive end */
+
+
+
+/* this section is for responsive the layout */
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
@@ -544,3 +816,6 @@ img {
         margin-left: 280px; /* Default margin for larger screens */
     }
 }
+
+
+/* end */

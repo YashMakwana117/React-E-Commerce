@@ -1,0 +1,169 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.9);
+    margin-right: 550px;
+  }
+  
+  .heading {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+  }
+  
+  .section label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .fileInput {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .fileInput input {
+    display: none;
+  }
+  
+  .fileInput label {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .fileInput span {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .logo, .favIcon, .footerLogo {
+    max-width: 100px;
+    height: auto;
+    margin-top: 10px;
+  }
+  
+  .saveButton {
+    background-color: red;
+    color: white;
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .saveButton:hover {
+    transform: scale(1.05);
+    background-color: rgb(214, 12, 12);
+  }
+
+  .saveButton:active{
+    transform: scale(0.95);
+  }
+
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and larger devices */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 700px;
+        margin-right: auto;
+    }
+}
+
+/* For mobile devices and smaller tablets */
+@media (max-width: 768px) {
+    .container {
+        max-width: 600px;
+        padding: 15px;
+    }
+
+    .heading {
+        font-size: 22px;
+    }
+
+    .section label {
+        font-size: 14px;
+    }
+
+    .fileInput label {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    .saveButton {
+        width: 80px;
+        font-size: 14px;
+    }
+}
+
+/* For smaller mobile devices */
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .heading {
+        font-size: 20px;
+    }
+
+    .section {
+        margin-bottom: 20px;
+    }
+
+    .section label {
+        font-size: 12px;
+    }
+
+    .fileInput {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .fileInput label {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+        padding: 5px;
+    }
+
+    .fileInput span {
+        font-size: 12px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .logo, .favIcon, .footerLogo {
+        max-width: 80px;
+    }
+
+    .saveButton {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+}

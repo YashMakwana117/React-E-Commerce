@@ -1,0 +1,384 @@
+.shippingmain {
+  /* margin-right: 300px; */
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.shippingsetupradio,
+.flatratewiseradio {
+  width: 100%;
+  box-shadow: 0 2px 4px rgb(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.shippingsetupradio h2,
+.flatratewiseradio h2,
+.areawiseradio h2,
+.productwiseradio h2 {
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flatratewise-inner,
+.areawise-inner,
+.productwise-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 500px;
+}
+
+.flatratewisesubmit,
+.areawisesubmit,
+.productwisesubmit {
+  width: 100px;
+  height: 30px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 450px) {
+  .shippingmain {
+    margin-right: 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .shippingsetupradio,
+  .flatratewiseradio {
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    box-sizing: border-box;
+  }
+
+  .shippingsetupradio h2,
+  .flatratewiseradio h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .flatratewise-inner,
+  .areawise-inner,
+  .productwise-inner {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .flatratewisesubmit,
+  .areawisesubmit,
+  .productwisesubmit {
+    width: auto;
+    height: 35px;
+    padding: 0 15px;
+    font-size: 14px;
+  }
+
+  .orderAreaContainer {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+    padding: 15px;
+  }
+
+  .orderAreaHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .orderAreaHeader h2 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .addOrderButton {
+    height: 35px;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+  .orderTable {
+    font-size: 14px;
+    margin-top: 15px;
+    overflow-x: auto;
+  }
+
+  .orderTable th,
+  .orderTable td {
+    padding: 8px 5px;
+  }
+
+  /* Additional adjustments */
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .orderAreaTitle{
+    color: black;
+  }
+
+  .addOrderButton{
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 6px;
+  }
+
+}
+
+/* Tablet and iPad screens */
+@media (min-width: 451px) and (max-width: 1024px) {
+  .shippingmain {
+    margin-right: 0;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .shippingsetupradio,
+  .flatratewiseradio {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .areawiseradio{
+    box-shadow: 0 2px 4px rgb(0, 0, 0, 0.5);
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  .areawise-inner input[type="number"]{
+    width: 97% !important;
+  }
+
+  .areawise-inner input[type="submit"]{
+    width: 30%;
+    align-self: center;
+  }
+
+  .shippingsetupradio h2,
+  .flatratewiseradio h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .flatratewise-inner,
+  .areawise-inner,
+  .productwise-inner {
+    width: 100%;
+    max-width: 600px;
+    gap: 15px;
+  }
+
+  .flatratewisesubmit,
+  .areawisesubmit,
+  .productwisesubmit {
+    width: auto;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 16px;
+  }
+
+  .orderAreaContainer {
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgb(0, 0, 0, 0.5);
+    border-radius: 6px;
+  }
+
+  .orderAreaHeader h2 {
+    font-size: 22px;
+    color: black;
+  }
+
+  .addOrderButton {
+    height: 40px;
+    padding: 0 15px;
+    font-size: 16px;
+    background-color: red;
+    border: none;
+    color: white;
+    border-radius: 6px;
+  }
+
+  .orderTable {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .orderTable th,
+  .orderTable td {
+    padding: 10px 8px;
+  }
+
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1400px) and (max-width:1445px){
+  .shippingmain{
+    width: 100%;
+    margin-right: 100px;
+  }
+
+  .areawiseradio{
+    box-shadow: 0 2px 4px rgb(0, 0, 0, 0.5);
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  .orderAreaContainer {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .orderAreaHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .orderAreaTitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .addOrderButton {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .orderTable {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+  }
+  
+  .orderTable th, .orderTable td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .orderTable th {
+    background-color: #f5f5f5;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .entriesInfo {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+  }
+}
+
+@media(min-width: 1450px){
+  .shippingmain {
+    margin-right: 300px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .areawiseradio{
+    box-shadow: 0 2px 4px rgb(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .orderAreaContainer {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .orderAreaHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .orderAreaTitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .addOrderButton {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .orderTable {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+  }
+  
+  .orderTable th, .orderTable td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .orderTable th {
+    background-color: #f5f5f5;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .entriesInfo {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+  }
+}

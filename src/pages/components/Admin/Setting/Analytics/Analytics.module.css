@@ -1,0 +1,139 @@
+/* Existing styles */
+.AnalyticsMain {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-right: 550px;
+  }
+  
+  .AnalyticsMain-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .AnalyticsMain-inner h2 {
+    color: black;
+    font-weight: 600;
+  }
+  
+  .AnalyticsAddbtn {
+    height: 35px;
+    width: auto;
+    padding: 0 15px;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .AnalyticsAddbtn:hover {
+    background-color: #b30000;
+  }
+  
+  .AnalyticsMain hr {
+    width: 100%;
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .AnalyticsTable {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .AnalyticsTable-Main {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .AnalyticsTable-Main th, .AnalyticsTable-Main td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .AnalyticsTable-Main th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .AnalyticsTable-Main tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .icon {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .icon img {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s, filter 0.2s;
+  }
+  
+  .icon img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+
+.AnalyticsClosebtn{
+    padding: 10px 20px; 
+    background-color: #f1f1f1; 
+    color: black; 
+    border: none; 
+    border-radius: 6px;
+    cursor: pointer;
+    width: 40%;
+    margin-left: 10px;
+}
+
+.AnalyticsClosebtn:hover{
+    background-color: #dddddd;
+}
+
+.AnalyticsSavebtn{
+    padding: 10px 20px; 
+    background-color: red; 
+    color: white;
+    border: none; 
+    border-radius: 6px;
+    cursor: pointer;
+    width: 40%
+}
+  
+  /* Optional: mobile responsiveness */
+  @media (max-width: 600px) {
+    .AnalyticsMain {
+      margin: 10px;
+      padding: 15px;
+    }
+  
+    .AnalyticsMain-inner h2 {
+      font-size: 18px;
+    }
+  
+    .AnalyticsAddbtn {
+      height: 30px;
+      padding: 0 10px;
+    }
+  
+    .AnalyticsTable-Main th, .AnalyticsTable-Main td {
+      padding: 8px;
+    }
+  }
+  

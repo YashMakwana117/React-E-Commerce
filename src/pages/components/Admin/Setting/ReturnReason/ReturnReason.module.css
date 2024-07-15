@@ -1,0 +1,237 @@
+.ReturnReasonMain{
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.9);
+    padding: 20px;
+    margin-right: 350px;
+    border-radius: 6px;
+}
+
+.ReturnReasonMainHeader h2{
+    color: black;
+}
+
+.ReturnReasonMainHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.addReturnReasonBtn{
+    width: 20%;
+    height: 40px;
+    align-self: center;
+    border: none;
+    border-radius: 6px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.addReturnReasonBtn:hover{
+    background-color: rgb(218, 1, 1);
+    transform: scale(1.05);
+}
+
+.addReturnReasonBtn:active{
+    transform: scale(0.95);
+}
+
+.ReturnReasonMain hr{
+    width: 100%;
+}
+
+
+.viewButton, .editButton, .deleteButton {
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.viewButton {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.editButton {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.deleteButton {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.viewButton:hover, .editButton:hover, .deleteButton:hover{
+    transform: scale(1.05);
+}
+
+.viewButton:active, .editButton:active, .deleteButton:active{
+    transform: scale(0.95);
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.SliderImageSettingIcon{
+    display: flex;
+    flex-direction: row;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.table th, .table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.modalContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    border-radius: 8px;
+  }
+  
+  .title {
+    margin-bottom: 16px;
+    position: relative;
+    color: black;
+  }
+  
+  .closeButton {
+    position: absolute !important;
+    right: -16px;
+    top: -16px;
+  }
+  
+  .inputField {
+    margin-bottom: 16px !important;
+  }
+  
+  .legend {
+    margin-bottom: 8px;
+  }
+  
+  .radioGroup {
+    margin-bottom: 16px;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+
+/* Mobile devices */
+@media (max-width: 600px) {
+    .ReturnReasonMain {
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    .addReturnReasonBtn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .ReturnReasonMainHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .table th, .table td {
+        padding: 5px;
+    }
+
+    .modalContent {
+        width: 90%;
+        padding: 16px;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Tablets and small desktops */
+@media (min-width: 601px) and (max-width: 992px) {
+    .ReturnReasonMain {
+        margin-right: 0;
+        padding: 15px;
+    }
+
+    .addReturnReasonBtn {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
+    .ReturnReasonMainHeader {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .table th, .table td {
+        padding: 8px;
+    }
+
+    .modalContent {
+        width: 80%;
+        padding: 24px;
+    }
+
+    .buttonGroup {
+        gap: 12px;
+    }
+}
+
+/* Larger desktops and monitors */
+@media (min-width: 993px) {
+    .ReturnReasonMain {
+        margin-right: 350px;
+        padding: 20px;
+    }
+
+    .addReturnReasonBtn {
+        width: 20%;
+    }
+
+    .ReturnReasonMainHeader {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .table th, .table td {
+        padding: 10px;
+    }
+
+    .modalContent {
+        width: 400px;
+        padding: 32px;
+    }
+
+    .buttonGroup {
+        gap: 16px;
+    }
+}

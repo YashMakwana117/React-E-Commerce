@@ -1,0 +1,93 @@
+.CookieSettingMain {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.9);
+    border-radius: 8px;
+    gap: 10px;
+    margin-right: 80px;
+}
+
+.CookieSettingMain hr{
+    width: 100%;
+}
+
+.Header {
+    text-align: left;
+}
+
+.Header h2{
+    color: black;
+    font-weight: 600;
+}
+
+.OtpSelect {
+    width: 100%;
+}
+
+.TextField {
+    width: 100%;
+}
+
+.SaveButton {
+    align-self: flex-start;
+    background-color: red;
+    color: white;
+    border: none;
+    width: 20%;
+    height: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.SaveButton:hover{
+    transform: scale(1.05);
+    background-color: rgb(214, 9, 9);
+}
+
+.SaveButton:active{
+    transform: scale(0.95);
+}
+
+
+/* Media Queries for Responsiveness */
+
+
+@media (min-width: 768px) {
+    .CookieSettingMain {
+        max-width: 90%;
+    }
+
+    .Select {
+        width: 95%;
+    }
+
+    .TextField {
+        width: 95%;
+    }
+
+    .SaveButton {
+        width: 20%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .CookieSettingMain {
+        max-width: 800px;
+    }
+
+    .Select {
+        width: 750px;
+    }
+
+    .TextField {
+        width: 94%;
+    }
+
+    .SaveButton {
+        width: 15%;
+    }
+}

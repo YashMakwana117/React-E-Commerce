@@ -1,6 +1,6 @@
 /* General Styles for Sidebar */
 .sidebar {
-    margin-top: 50px;
+    margin-top: 61px;
     background-color: #ffffff;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -28,14 +28,14 @@
     z-index: 1001; /* Ensure it stays above other content */
 }
 
-.logo {
+/* .logo {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 #dashbord{
     padding-left: 30px;
 }
@@ -46,7 +46,8 @@
 }
 
 .menu {
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 70px;
 }
 
 .menu .ant-menu-item {

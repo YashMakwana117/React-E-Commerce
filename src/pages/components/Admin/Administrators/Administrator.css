@@ -1,0 +1,192 @@
+.aa {
+  width: 100%;
+}
+
+.administrator {
+  margin-left: 300px;
+  padding: 20px;
+}
+
+.administrator h2 {
+  color: black;
+}
+
+.box {
+  width: 81.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .administrator {
+    margin-left: 0;
+    padding: 10px;
+  }
+  .box {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .administrator {
+    margin-left: 0;
+    padding: 10px;
+  }
+  .box {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.Table {
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  overflow-x: auto;
+}
+
+.Table table {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.Table thead {
+  background-color: #f4f4f4;
+  text-align: left;
+}
+
+.Table th, .Table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.Table th {
+  font-weight: 600;
+  color: #5A5A5A;
+}
+
+.Table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.Table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.icon {
+  display: flex;
+  gap: 10px;
+}
+
+.icon img {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  transition: transform 0.2s;
+}
+
+.icon img:hover {
+  transform: scale(1.1);
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #d4edda;
+  color: #155724;
+  font-weight: 600;
+}
+
+.header-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.header-buttons .h4 {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.header-buttons .btn1 {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.header-buttons button {
+  align-self: center;
+  height: 45px;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.3s;
+}
+
+.header-buttons button:hover {
+  background-color: #f1f1f1;
+}
+
+.header-buttons .add-admin {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.header-buttons .add-admin:hover {
+  background-color: #ff4757;
+}
+
+.view, .edit, .delete {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.view {
+  background-color: #f23e141a;
+}
+
+.view:hover {
+  background-color: #f3320650;
+}
+
+.edit {
+  background-color: #dcfce7;
+}
+
+.edit:hover {
+  background-color: #71a182;
+}
+
+.delete {
+  background-color: #f23e141a;
+}
+
+.delete:hover {
+  background-color: #f3320650;
+}

@@ -1,0 +1,457 @@
+/* Base styles */
+.viewmain {
+    margin-left: 300px;
+    margin-top: 40px;
+}
+
+.photobox {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    height: 200px;
+    margin-right: 15px;
+    display: flex;
+}
+
+.hidden {
+    display: none;
+  }
+  
+  .active {
+    display: block; /* or any other appropriate display value */
+  }
+  
+
+.avatar {
+    display: flex;
+    height: 200px;
+    width: 180px;
+}
+
+
+#avatar {
+    margin-left: 10px;
+    border-radius: 10px;
+    align-self: center;
+    width: 140px;
+    height: 140px;
+}
+
+.adname {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.adposition {
+    display: flex;
+    width: 60px;
+    height: 30px;
+    background-color: #e899063d;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.adposition span {
+    font-size: 12px;
+    color: red;
+}
+
+#upload-image {
+    width: 25px;
+    height: 25px;
+}
+
+.viewoption {
+    display: flex;
+    margin-top: 25px;
+    width: 100%;
+    height: 45px;
+    gap: 20px;
+}
+
+/* give style in one */
+
+.viewprofile, .viewsecurity, .viewaddress, .vieworder {
+    cursor: pointer;
+    background-color: red;
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    box-shadow: 0 2px 4px rgba(63, 0, 0, 0.5);
+  }
+  
+  .viewprofile img, .viewsecurity img, .viewaddress img, .vieworder #basket {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .viewprofile span, .viewsecurity span, .viewaddress span, .vieworder span {
+    font-size: 16px;
+  }
+
+
+/* end */
+
+/* below card start */
+
+.belowInnerProfile {
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    width: 40vh;
+    height: 28vh;
+    margin-right: 15px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.belowInnerProfile h3 {
+    margin-left: 25px;
+}
+
+.belowInnerProfile hr {
+    width: 100%;
+}
+
+/* email start */
+
+.belowInnerProfile-email {
+    display: flex;
+    margin-left: 25px;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.belowInnerProfile-email label {
+    font-weight: 700;
+}
+
+/* end */
+
+/* phone start */
+
+.belowInnerProfile-phno {
+    display: flex;
+    margin-left: 25px;
+    gap: 20px;
+}
+
+.belowInnerProfile-phno label {
+    font-weight: 700;
+}
+
+/* end */
+
+/* status start */
+
+.belowInnerProfile-status {
+    display: flex;
+    margin-left: 25px;
+    gap: 20px;
+}
+
+.belowInnerProfile-status label {
+    font-weight: 700;
+    margin-top: 3px;
+}
+
+.belowInnerProfile-status-span {
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    width: 60px;
+    height: 30px;
+    background-color: rgba(4, 255, 4, 0.377);
+}
+
+.belowInnerProfile-status-span span {
+    align-self: center;
+    font-size: 14px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+/* end */
+
+/* below security start */
+
+.belowInnerSecurity{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    height: 25vh;
+    margin-right: 300px;
+    display: flex;
+    flex-direction: column;
+    width: 80vh;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.belowInnerSecurity h3{
+    margin-left: 25px;
+    color: black;
+}
+.belowInnerSecurity hr{
+    width: 100%;
+}
+.belowRowSecurity{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+    /* justify-content: space-between; */
+}
+.belowInnerSecurity-pass{
+    display: flex;
+    flex-direction: column;
+}
+
+.belowInnerSecurity-pass label{
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.belowInnerSecurity-pass input{
+    margin-left: 20px;
+    width: 300px;
+}
+
+.belowInnerSecurity-ConfirmPass{
+    display: flex;
+    flex-direction: column;
+}
+
+.belowInnerSecurity-ConfirmPass label{
+    font-weight: 700;
+}
+.belowInnerSecurity-ConfirmPass input{
+    width: 300px;
+}
+
+/* end */
+
+/* belowInnerAddress start */
+
+/* .belowInnerAddress{
+    margin-left: 300px;
+} */
+
+
+/* end */
+
+/* Responsive styles */
+
+/* For large desktops */
+
+@media (max-width: 1200px) {
+    .viewmain {
+        margin-left: 250px;
+    }
+    .belowInnerProfile {
+        width: 45vh;
+        margin-top: 20px;
+        height: 40vh;
+    }
+}
+
+/* For tablets and small desktops */
+@media (max-width: 992px) {
+    .viewmain {
+        margin-left: 200px;
+    }
+    .photobox {
+        flex-direction: column;
+        height: auto;
+        margin-right: 0;
+    }
+    .avatar {
+        width: 100%;
+        height: auto;
+    }
+    #avatar {
+        width: 120px;
+        height: 120px;
+    }
+    #upload-image {
+        width: 20px;
+        height: 20px;
+    }
+    .belowInnerProfile {
+        width: 50vh;
+        margin-top: 20px;
+        height: 40vh;
+    }
+    .belowInnerProfile{
+        margin-top: 60px;
+    }
+   
+}
+
+/* For large phones and tablets */
+@media (max-width: 768px) {
+    .viewmain {
+        margin-left: 0;
+    }
+    .viewoption {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .belowInnerProfile {
+        width: 90%;
+        margin-right: 0;
+    }
+    .belowInnerProfile{
+        margin-top: 20px;
+        height: 40vh;
+    }
+    #upload-image {
+        width: 18px;
+        height: 18px;
+    }
+    .Button {
+        font-size: 10px;
+        padding: 5px;
+    }
+}
+
+/* For small phones */
+@media (max-width: 576px) {
+    .viewmain {
+        margin-top: 20px;
+    }
+    .photobox {
+        margin-right: 0;
+        width: 100%;
+    }
+    .avatar {
+        width: 100%;
+        height: auto;
+    }
+    #avatar {
+        width: 100px;
+        height: 100px;
+    }
+    #upload-image {
+        width: 15px;
+        height: 15px;
+    }
+    .belowInnerProfile {
+        width: 100%;
+        height: auto;
+    }
+    .belowInnerProfile h3, .belowInnerProfile-email, .belowInnerProfile-phno, .belowInnerProfile-status {
+        margin-left: 10px;
+        
+    }
+    .belowInnerProfile{
+        margin-top: 20px;
+        height: 40vh;
+    }
+    .belowInnerProfile-email, .belowInnerProfile-phno, .belowInnerProfile-status {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .Button {
+        font-size: 8px;
+        padding: 5px;
+    }
+}
+
+/* 4 div responsive===================================================== */
+
+@media (max-width: 992px) {
+    .viewoption {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .viewprofile, .viewsecurity, .viewaddress, .vieworder {
+        width: 90px;
+        height: 35px;
+    }
+  
+    .viewprofile span, .viewsecurity span, .viewaddress span, .vieworder span {
+      font-size: 14px;
+    }
+  }
+  
+  /* For large phones and tablets */
+  @media (max-width: 768px) {
+    .viewoption {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .viewprofile, .viewsecurity, .viewaddress, .vieworder {
+        width: 90px;
+        height: 35px;
+    }
+  
+    .viewprofile span, .viewsecurity span, .viewaddress span, .vieworder span {
+      font-size: 12px;
+    }
+  }
+  
+  /* For small phones */
+  @media (max-width: 576px) {
+    .viewoption {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 5px;
+    }
+  
+    .viewprofile, .viewsecurity, .viewaddress, .vieworder {
+      width: 90px;
+      height: 35px;
+    }
+  
+    .viewprofile span, .viewsecurity span, .viewaddress span, .vieworder span {
+      font-size: 10px;
+    }
+  }
+
+
+/* password responsive ----------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .belowInnerSecurity {
+        width: 90%;
+        height: 25vh;
+    }
+    .belowInnerSecurity-pass input{
+        margin-left: 20px;
+        width: 150px;
+    }
+    .belowInnerSecurity-ConfirmPass input{
+        width: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .belowInnerSecurity {
+        width: 100%;
+        height: 28vh;
+        margin-bottom: 20px;
+    }
+    .belowInnerSecurity-pass input{
+        margin-left: 10px;
+        width: 150px;
+    }
+    .belowInnerSecurity-ConfirmPass input{
+        width: 150px;
+    }
+    .belowInnerSecurity-pass label{
+        margin-left: 10px;
+    }
+}
