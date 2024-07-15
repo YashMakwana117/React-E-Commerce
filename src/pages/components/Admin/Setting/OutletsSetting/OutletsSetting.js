@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './OutletsSetting.module.css';
-import { Modal, Box, Button } from '@mui/material';
+import { Modal, Box, Button,Fade } from '@mui/material';
 
 const modalStyle = {
     position: 'absolute',
@@ -12,7 +12,7 @@ const modalStyle = {
     boxShadow: 24,
     p: 4,
     maxHeight: '90vh',
-    overflowY: 'auto'
+    overflowY: 'auto',
 };
 
 export default function OutletsSetting() {
@@ -59,7 +59,9 @@ export default function OutletsSetting() {
                 open={openModal}
                 onClose={handleCloseModal}
                 aria-labelledby="outlet-modal-title"
+                closeAfterTransition
             >
+                <Fade in={openModal} timeout={700}>
                 <Box sx={modalStyle} className={styles.modalBox}>
                     <div className={styles.modalHeader}>
                         <h2 id="outlet-modal-title">Outlets</h2>
@@ -122,6 +124,7 @@ export default function OutletsSetting() {
                         </div>
                     </form>
                 </Box>
+                </Fade>
             </Modal>
         </>
     );
