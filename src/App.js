@@ -23,7 +23,7 @@ export default function App() {
   const [collapsed, setCollapsed] = useState(false);
 
   // Define routes where SideBar should be hidden
-  const hideSideBarRoutes = ['/', '/home'];
+  const hideSideBarRoutes = ['/', '/Home'];
 
   // Function to determine if SideBar should be hidden
   const shouldHideSideBar = (path) => {
@@ -36,7 +36,7 @@ export default function App() {
         {/* Conditionally render SideBar based on route */}
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/Home" element={<HomePage />} />
           {/* Routes where SideBar should be displayed */}
           <Route path="/dashbord" element={<Dashbord />} />
           <Route path="/administrator" element={<Administrator />} />
