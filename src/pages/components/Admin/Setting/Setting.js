@@ -48,6 +48,7 @@ import ProductBrand from "./ProductBrand/ProductBrand";
 import ReturnReason from "./ReturnReason/ReturnReason";
 import SuppierSetting from "./SuppierSetting/SuppierSetting";
 import OutletsSetting from "./OutletsSetting/OutletsSetting";
+import BenefitsSetting from "./BenefitsSetting/BenefitsSetting";
 
 export default function Setting() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -97,6 +98,8 @@ export default function Setting() {
         return <SuppierSetting/>;
       case "OutletsSetting":
         return <OutletsSetting/>;
+      case "BenefitsSetting":
+        return <BenefitsSetting/>;
       default:
         return <div>select item</div>;
     }
@@ -300,8 +303,8 @@ export default function Setting() {
                   </ListItemButton>
                 </ListItem>
 
-                <ListItem disablePadding>
-                  <ListItemButton>
+                <ListItem disablePadding onClick={() => setSelectedPage("BenefitsSetting")}>
+                  <ListItemButton selected={selectedPage === "BenefitsSetting"}>
                     <ListItemIcon>
                       <UilAward />
                     </ListItemIcon>
