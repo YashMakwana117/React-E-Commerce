@@ -98,7 +98,7 @@ export default function SuppierSetting() {
             }}
             onClick={handleOpenDrawer}
           >
-            + Add Product Brands
+            + Suppliers
           </button>
         </div>
       </div>
@@ -150,6 +150,8 @@ export default function SuppierSetting() {
         />
       </div>
 
+      
+    {/* --------------------------------------------------- */}
       <Drawer
         anchor="right"
         open={openDrawer}
