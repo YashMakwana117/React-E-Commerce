@@ -276,3 +276,18 @@
     width: 100%;
     margin-bottom: 20px;
   }
+
+  @media screen and (max-width: 768px) {
+    .modalContent {
+      width: 90%;
+      max-width: 90%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .modalContent {
+      width: 90%;
+      max-width: 90%;
+      padding: 10px;
+    }
+  }

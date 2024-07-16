@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./PageSetting.module.css";
-import { Modal, Box } from "@mui/material";
+import { Modal, Box, Fade } from "@mui/material";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -59,6 +59,7 @@ export default function PageSetting() {
       {/* ------------------------------------------------------------------ */}
 
       <Modal open={openModal} onClose={handleCloseModal}>
+        <Fade in={openModal} timeout={700}>
         <Box className={styles.modalContent}>
           <div className={styles.header}>
             <h2>Pages</h2>
@@ -84,7 +85,6 @@ export default function PageSetting() {
                   id="active"
                   name="status"
                   value="active"
-                  checked
                 />
                 <label htmlFor="active">Active</label>
                 <input
@@ -140,6 +140,7 @@ export default function PageSetting() {
             </div>
           </form>
         </Box>
+        </Fade>
       </Modal>
     </>
   );
