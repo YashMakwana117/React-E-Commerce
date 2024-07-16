@@ -1,0 +1,278 @@
+.PageSettingMain{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.9);
+    border-radius: 6px;
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.PageSettingMainHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.PageSettingMainHeader h2{
+    color: black;
+}
+
+.addpagebtn{
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 30%;
+    height: 30px;
+    align-self: center;
+    cursor: pointer;
+    transition: background-color 0.3s,transform 0.3s;
+}
+
+.addpagebtn:hover{
+    background-color: rgb(228, 2, 2);
+    transform: scale(1.05);
+}
+
+.addpagebtn:active{
+    transform: scale(0.95);
+}
+
+.PageSettingMainTable {
+    overflow-x: auto;
+}
+
+.PageSettingMainTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.PageSettingMainTable th, .PageSettingMainTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.PageSettingMainTable th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.PageSettingMainTable tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .PageSettingMain {
+        max-width: 90%;
+    }
+
+    .addpagebtn {
+        width: 40%;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .PageSettingMain{
+        width: 750px;
+    }
+
+    .PageSettingMainHeader h2 {
+        font-size: 22px;
+    }
+
+    .addpagebtn {
+        width: 50%;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .PageSettingMain{
+        width: 600px;
+    }
+
+    .PageSettingMainHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .PageSettingMainHeader h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .addpagebtn {
+        width: 60%;
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .PageSettingMain {
+        padding: 15px;
+        width: 300px;
+    }
+
+    .PageSettingMainHeader h2 {
+        font-size: 18px;
+    }
+
+    .addpagebtn {
+        width: 80%;
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .PageSettingMainTable th, .PageSettingMainTable td {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 1023px){
+    .PageSettingMain{
+        width: 750px;
+    }
+}
+
+@media (min-width: 1400px){
+    .PageSettingMain{
+        width: 600px;
+    }
+}
+
+
+@media (min-width: 1500px){
+    .PageSettingMain{
+        width: 800px;
+    }
+}
+
+/* -------------------------------------- */
+
+
+/* Modal Content */
+.modalContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .header h2 {
+    color: #333;
+    margin: 0;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formGroup label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .inputField,
+  .selectField {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .radioGroup {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .radioGroup input {
+    margin-right: 5px;
+  }
+  
+  .fileInput input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  .editorToolbar {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .closeButtonSecondary {
+    background: #f5f5f5;
+    color: #333;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .saveButton {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+
+  .editorToolbar {
+    margin-bottom: 20px;
+  }
+  
+  .editorToolbar > div {
+    border-radius: 4px;
+    height: 100px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
