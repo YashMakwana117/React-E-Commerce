@@ -50,6 +50,7 @@ import SuppierSetting from "./SuppierSetting/SuppierSetting";
 import OutletsSetting from "./OutletsSetting/OutletsSetting";
 import BenefitsSetting from "./BenefitsSetting/BenefitsSetting";
 import UnitSetting from "./UnitSetting/UnitSetting";
+import TaxSetting from "./TaxSetting/TaxSetting";
 
 export default function Setting() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -103,6 +104,8 @@ export default function Setting() {
         return <BenefitsSetting/>;
       case "UnitSetting":
         return <UnitSetting/>;
+      case "TaxSetting":
+        return <TaxSetting/>;
       default:
         return <div>select item</div>;
     }
@@ -324,12 +327,12 @@ export default function Setting() {
                   </ListItemButton>
                 </ListItem>
 
-                <ListItem disablePadding>
-                  <ListItemButton>
+                <ListItem disablePadding onClick={() => setSelectedPage("TaxSetting")}>
+                  <ListItemButton selected={selectedPage === "TaxSetting"}>
                     <ListItemIcon>
                       <UilTagAlt />
                     </ListItemIcon>
-                    <ListItemText primary="Taxes" />
+                    <ListItemText primary="Taxes"/>  
                   </ListItemButton>
                 </ListItem>
 

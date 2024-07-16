@@ -1,0 +1,251 @@
+.TaxSettingMain {
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .TaxSettingMainHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .TaxSettingMainHeader h2 {
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .addtaxesbtn {
+    width: auto;
+    height: 40px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .addtaxesbtn:hover {
+    background-color: rgb(228, 2, 2);
+    transform: scale(1.05);
+  }
+  
+  .addtaxesbtn:active {
+    transform: scale(0.95);
+  }
+  
+  .TaxSettingMainTable {
+    overflow-x: auto;
+  }
+  
+  .TaxSettingMainTable table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .TaxSettingMainTable th, .TaxSettingMainTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .TaxSettingMainTable th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .TaxSettingMainTable td {
+    color: #555;
+  }
+  
+  .TaxSettingMainTable tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .TaxSettingMainTable td .action-btn {
+    /* background-color: #2196f3; */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+
+  @media (max-width: 480px) {
+    .TaxSettingMain {
+      padding: 10px;
+    }
+  
+    .TaxSettingMainHeader h2 {
+      font-size: 18px;
+    }
+  
+    .addtaxesbtn {
+      font-size: 12px;
+    }
+  
+    .TaxSettingMainTable th, .TaxSettingMainTable td {
+      padding: 6px;
+      font-size: 12px;
+    }
+  
+    .TaxSettingMainTable td .action-btn {
+      padding: 4px 8px;
+      font-size: 10px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .TaxSettingMain {
+      max-width: 1000px;
+    }
+  
+    .TaxSettingMainHeader h2 {
+      font-size: 28px;
+    }
+  
+    .addtaxesbtn {
+      font-size: 18px;
+    }
+  
+    .TaxSettingMainTable th, .TaxSettingMainTable td {
+      padding: 14px;
+      font-size: 16px;
+    }
+  
+    .TaxSettingMainTable td .action-btn {
+      padding: 10px 14px;
+      font-size: 16px;
+    }
+  }
+
+@media (min-width: 1500px){
+    .TaxSettingMain{
+        width: 800px;
+    }
+}
+
+/* ------------------------------------------------------------------- */
+
+.modalContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (min-width: 768px) {
+    .modalContent {
+      width: 80%;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .modalContent {
+      width: 60%;
+    }
+  }
+  
+  .modalTitle {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .formRow {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  @media (min-width: 768px) {
+    .formRow {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  .formField {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .formField label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .formField input[type="text"],
+  .formField input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .radioGroup {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .closeButton,
+  .saveButton {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .closeButton {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .saveButton {
+    background-color: red;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .saveButton:hover {
+    transform: scale(1.05);
+    background-color: rgb(228, 2, 2);
+  }
+  
+  .saveButton:active {
+    transform: scale(0.95);
+  }
+  
