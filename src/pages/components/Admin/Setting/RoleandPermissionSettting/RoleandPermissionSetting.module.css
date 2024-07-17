@@ -1,0 +1,144 @@
+.RoleandPermissionSettingMain{
+    display: flex;
+    flex-direction: column;
+    max-width: 800%;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.9);
+    border-radius: 6px;
+    padding: 20px;
+    margin: auto;
+}
+
+.RoleandPermissionSettingHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.RoleandPermissionSettingHeader h2{
+    color: black;
+    align-self: center;
+}
+
+.addrolebtn{
+    width: 30%;
+    height: 30px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    align-self: center;
+    transition: background-color 0.3s,transform 0.3s;
+    cursor: pointer;
+}
+
+.addrolebtn:hover{
+    background-color: red;
+    transform: scale(1.05);
+}
+
+.addrolebtn:active{
+    transform: scale(0.95);
+}
+
+
+.rolesTable {
+    display: flex;
+    flex-direction: column;
+}
+
+.roleRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.roleInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.roleName {
+    font-weight: bold;
+}
+
+.memberCount {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.roleActions {
+    display: flex;
+    gap: 10px;
+}
+
+.roleActions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.permissionsBtn {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.editBtn {
+    background-color: #52c41a;
+    color: white;
+}
+
+.deleteBtn {
+    background-color: #ff4d4f;
+    color: white;
+}
+
+.tablePagination {
+    margin-top: 20px;
+    text-align: left;
+    color: #888;
+    font-size: 0.9em;
+}
+
+
+@media (min-width: 1400px){
+    .RoleandPermissionSettingMain{
+        width: 600px;
+    }
+}
+
+
+@media (min-width: 1500px){
+    .RoleandPermissionSettingMain{
+        width: 800px;
+    }
+}
+
+
+/* ----------------------------------Modal style-------------------------------------- */
+
+.modalTitle {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .form {
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }

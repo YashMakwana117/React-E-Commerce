@@ -52,6 +52,7 @@ import BenefitsSetting from "./BenefitsSetting/BenefitsSetting";
 import UnitSetting from "./UnitSetting/UnitSetting";
 import TaxSetting from "./TaxSetting/TaxSetting";
 import PageSetting from "./PageSetting/PageSetting";
+import RoleandPermissionSetting from "./RoleandPermissionSettting/RoleandPermissionSetting";
 
 export default function Setting() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -109,6 +110,8 @@ export default function Setting() {
         return <TaxSetting/>;
       case "PageSetting":
         return <PageSetting/>;
+      case "RoleandPermission":
+        return <RoleandPermissionSetting/>
       default:
         return <div>select item</div>;
     }
@@ -348,8 +351,8 @@ export default function Setting() {
                   </ListItemButton>
                 </ListItem>
 
-                <ListItem disablePadding>
-                  <ListItemButton>
+                <ListItem disablePadding onClick={() => setSelectedPage("RoleandPermission")}>
+                  <ListItemButton selected={selectedPage === "RoleandPermission"}>
                     <ListItemIcon>
                       <UilKeyholeSquare />
                     </ListItemIcon>
