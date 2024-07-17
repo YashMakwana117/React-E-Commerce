@@ -53,6 +53,7 @@ import UnitSetting from "./UnitSetting/UnitSetting";
 import TaxSetting from "./TaxSetting/TaxSetting";
 import PageSetting from "./PageSetting/PageSetting";
 import RoleandPermissionSetting from "./RoleandPermissionSettting/RoleandPermissionSetting";
+import LanguagesSetting from "./LanguagesSetting/LanguagesSetting";
 
 export default function Setting() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -111,7 +112,9 @@ export default function Setting() {
       case "PageSetting":
         return <PageSetting/>;
       case "RoleandPermission":
-        return <RoleandPermissionSetting/>
+        return <RoleandPermissionSetting/>;
+      case "LanguagesSetting":
+        return <LanguagesSetting/>;
       default:
         return <div>select item</div>;
     }
@@ -360,8 +363,8 @@ export default function Setting() {
                   </ListItemButton>
                 </ListItem>
 
-                <ListItem disablePadding>
-                  <ListItemButton>
+                <ListItem disablePadding onClick={() => setSelectedPage("LanguagesSetting")}>
+                  <ListItemButton selected={selectedPage === "LanguagesSetting"}>
                     <ListItemIcon>
                       <LanguageOutlinedIcon />
                     </ListItemIcon>
