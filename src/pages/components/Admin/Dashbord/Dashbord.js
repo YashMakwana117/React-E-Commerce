@@ -7,8 +7,7 @@ import product from "../../../../assets/image/products.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
 import Chart from "../../Chart/Chart";
-import order from "../../../../assets/image/order360.jpg";
-import not2 from "../../../../assets/image/not2.png";
+
 
 import TopBar from "../TopBar/TopBar";
 

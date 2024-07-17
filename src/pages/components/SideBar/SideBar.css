@@ -114,6 +114,9 @@
 
 /* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
+    .hamburger-icon {
+        display: block;
+    }
     .sidebar {
         width: 200px;
     }
