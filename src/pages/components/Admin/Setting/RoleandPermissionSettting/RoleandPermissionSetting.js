@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import styles from './RoleandPermissionSetting.module.css';
-import { Modal, Box, Button, Fade } from '@mui/material';
+import { Modal, Box, Button, Fade, Drawer } from '@mui/material';
+
 
 
 export default function RoleandPermissionSetting() {
 
     const [openModal,setOpenModal] = useState(false);
+    const [openDrawer,setOpenDrawer] = useState(false);
 
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
@@ -18,6 +20,35 @@ export default function RoleandPermissionSetting() {
         {name: 'Stuff',members: 0},
         {name: 'Distributor',members: 1},
         {name: 'Retailer',members: 1},
+    ];
+    
+    const handleOpenDrawer = () => setOpenDrawer(true);
+    const handleCloseDrawer = () => setOpenDrawer(false);
+
+    const permission = [
+        {id: 1,page: 'Dashboard',create: false, update: false,delete: false,view: false},
+        {id: 2,page: 'Product',create: true, update: true,delete: true,view: true},
+        {id: 3,page: 'Purchase',create: true, update: true,delete: true,view: true},
+        {id: 4,page: 'Damages',create: true, update: true,delete: true,view: true},
+        {id: 5,page: 'Stock',create: false, update: false,delete: false,view: false},
+        {id: 6,page: 'POS',create: false, update: false,delete: false,view: false},
+        {id: 7,page: 'POS Order',create: false, update: false,delete: false,view: false},
+        {id: 8,page: 'Online Order',create: false, update: false,delete: false,view: false},
+        {id: 9,page: 'Return And Refunds',create: false, update: false,delete: false,view: false},
+        {id: 10,page: 'Return Order',create: true, update: true,delete: true,view: true},
+        {id: 11,page: 'Cupoons',create: true, update: true,delete: true,view: true},
+        {id: 12,page: 'Promotions',create: true, update: true,delete: true,view: true},
+        {id: 13,page: 'Product Section',create: true, update: true,delete: true,view: true},
+        {id: 14,page: 'Push Notification',create: true, update: true,delete: true,view: true},
+        {id: 15,page: 'Subscriber',create: false, update: false,delete: false,view: false},
+        {id: 16,page: 'Administator',create: true, update: true,delete: true,view: true},
+        {id: 17,page: 'Customers',create: true, update: true,delete: true,view: true},
+        {id: 18,page: 'Employees',create: true, update: true,delete: true,view: true},
+        {id: 19,page: 'Transaction',create: false, update: false,delete: false,view: false},
+        {id: 20,page: 'Sales Report',create: false, update: false,delete: false,view: false},
+        {id: 21,page: 'Product Report',create: false, update: false,delete: false,view: false},
+        {id: 22,page: 'Credit Balance Report',create: false, update: false,delete: false,view: false},
+        {id: 23,page: 'Setting',create: false, update: false,delete: false,view: false},
     ];
 
   return (
@@ -35,7 +66,7 @@ export default function RoleandPermissionSetting() {
                             <span className={styles.roleMember}>Member - {role.members}</span>
                         </div>
                         <div className={styles.roleActions}>
-                            <button className={styles.permissionsBtn}>Permissions</button>
+                            <button className={styles.permissionsBtn} onClick={handleOpenDrawer}>Permissions</button>
                             <button className={styles.editBtn} onClick={handleOpen}>Edit</button>
                             {index > 4 && <button className={styles.deleteBtn}>Delete</button>}
                         </div>
@@ -78,6 +109,48 @@ export default function RoleandPermissionSetting() {
             </Box>
             </Fade>
         </Modal>
+        {/* ---------------------------------------------------------------------- */}
+
+        <Drawer anchor="right" open={openDrawer} onClose={handleCloseDrawer}>
+        <div className={styles.tableContainer}>
+          <h2>Role & Permissions (Admin)</h2>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>PAGE</th>
+                <th>CREATE</th>
+                <th>UPDATE</th>
+                <th>DELETE</th>
+                <th>VIEW</th>
+              </tr>
+            </thead>
+            <tbody>
+                {permission.map((row) => (
+                    <tr key={row.id}>
+                        <td>
+                            <input type="checkbox" checked={true} readOnly />
+                        </td>
+                        <td>{row.page}</td>
+                        <td>
+                            <input type="checkbox" checked={row.create} readOnly />
+                        </td>
+                        <td>
+                            <input type="checkbox" checked={row.update} readOnly />
+                        </td>
+                        <td>
+                            <input type="checkbox" checked={row.delete} readOnly />
+                        </td>
+                        <td>
+                            <input type="checkbox" checked={row.view} readOnly />
+                        </td>
+                    </tr>
+                ))}
+            </tbody>
+            </table>
+        </div>
+            <Button variant="contained" color="primary" style={{width:'20%',marginLeft:20,marginBottom:20,backgroundColor:'red'}} onClick={handleCloseDrawer}>Save</Button>
+        </Drawer>
     </>
   )
 }

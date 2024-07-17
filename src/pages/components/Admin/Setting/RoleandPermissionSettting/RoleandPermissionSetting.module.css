@@ -142,3 +142,78 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+
+/* -----------------------------Drawer Css -------------------------------------- */
+
+.tableContainer {
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .tableContainer h2 {
+    color: black;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .table th, .table td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .table td {
+    vertical-align: middle;
+  }
+  
+  .table input[type="checkbox"] {
+    accent-color: red;
+    cursor: pointer;
+  }
+
+
+  @media (max-width: 768px) {
+    .tableContainer {   
+      padding: 10px;
+    }
+
+    .table th,
+    .table td {
+      padding: 6px;
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .tableContainer {
+      padding: 5px;
+    }
+
+    .table th,
+    .table td {
+      padding: 4px;
+      font-size: 12px; /* Further adjust font size for very small screens */
+    }
+  } 
+
+  @media (min-width: 770px) {
+        .tableContainer{
+            width: 700px;
+        }
+        .table{
+            overflow-x: hidden;
+        }
+  }
