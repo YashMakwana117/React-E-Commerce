@@ -169,3 +169,61 @@
         width: 120px;
     }
 }
+
+/* ----------------Drawer Css------------------------------------*/
+
+.drawerContent {
+    padding: 20px;
+    width: 300px;
+  }
+  
+  .drawerContent h2{
+        color: black;
+  }
+
+  .languageCircle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .languageImage {
+    width: 100%; /* Increase the size */
+    height: 100%; /* Increase the size */
+    background-color: white;
+    border: none;
+    object-fit: contain;
+  }
+  
+  .activeTag {
+    background-color: #E0F2F1;
+    color: #00897B;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+  
+  .getFileButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .languageIcon {
+    font-size: 80px;
+  }
+  
+  .selectFeild{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
