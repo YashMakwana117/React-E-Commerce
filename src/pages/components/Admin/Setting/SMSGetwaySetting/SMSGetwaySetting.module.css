@@ -101,3 +101,125 @@
     background-color: rgb(228, 2, 2);
 }
 
+/* Media query for responsive layout */
+
+
+@media (max-width: 1440px){
+    .SMSGetwaySettingMain{
+        width: 600px;
+    }
+    .smsgetwaydiv{
+        width: 650px;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 1024px){
+    .SMSGetwaySettingMain {
+        width: 700px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .SMSGetwaySettingTabs {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .SMSGetwaySettingTabs select{
+        margin-top: 20px;
+    }
+    .smsgetwaydiv {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        margin-right: 20px;
+    }
+
+    .SMSGetwayFields {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+    }
+}
+
+
+@media (max-width: 691px){
+    .SMSGetwaySettingMain {
+        width: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .SMSGetwaySettingTabs {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .SMSGetwaySettingTabs select{
+        margin-top: 15px;
+    }
+    .smsgetwaydiv {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        /* margin-right: 10px; */
+    }
+
+    .SMSGetwayFields {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .SMSGetwaySettingMain {
+        width: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .SMSGetwaySettingTabs {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .smsgetwaydiv {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+
+    .SMSGetwayFields {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+}
+
+@media (max-width: 344px){
+
+    .SMSGetwaySettingTabs {
+        /* width: 250px; */
+        /* margin-right: 20px; */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .smsgetwaydiv{
+        width: 300px;
+        /* margin-right: 20px; */
+        margin-left: 15px;
+    }
+}
