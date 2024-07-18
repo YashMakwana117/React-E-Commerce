@@ -54,6 +54,7 @@ import TaxSetting from "./TaxSetting/TaxSetting";
 import PageSetting from "./PageSetting/PageSetting";
 import RoleandPermissionSetting from "./RoleandPermissionSettting/RoleandPermissionSetting";
 import LanguagesSetting from "./LanguagesSetting/LanguagesSetting";
+import SMSGetwaySetting from "./SMSGetwaySetting/SMSGetwaySetting";
 
 export default function Setting() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -115,6 +116,8 @@ export default function Setting() {
         return <RoleandPermissionSetting/>;
       case "LanguagesSetting":
         return <LanguagesSetting/>;
+      case "SMSGetway":
+        return <SMSGetwaySetting/>;
       default:
         return <div>select item</div>;
     }
@@ -372,8 +375,8 @@ export default function Setting() {
                   </ListItemButton>
                 </ListItem>
 
-                <ListItem disablePadding>
-                  <ListItemButton>
+                <ListItem disablePadding onClick={() => setSelectedPage("SMSGetway")}>
+                  <ListItemButton selected={selectedPage === "SMSGetway"}>
                     <ListItemIcon>
                       <SmsOutlinedIcon />
                     </ListItemIcon>

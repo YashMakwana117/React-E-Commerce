@@ -1,0 +1,103 @@
+.SMSGetwaySettingMain {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: auto;
+}
+
+.SMSGetwaySettingTabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.SMSGetwaySettingTabs button, .SMSGetwaySettingTabs select {
+    border: none;
+    background-color: transparent;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.SMSGetwaySettingTabs button:hover{
+    background-color: red;
+    color: white;
+}
+
+.SMSGetwaySettingTabs .activeTab {
+    background-color: red;
+    color: #fff;
+}
+
+.smsgetwaydiv {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+    width: 800px;  
+    margin: auto; 
+}
+
+.smsgetwaydiv h2{
+    color: black;
+}
+
+.SMSGetwayFields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px !important;
+    margin-bottom: 70px;
+    flex-grow: 1;
+}
+
+.fieldGroup {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fieldGroup label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.fieldGroup input, .fieldGroup select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.saveButton {
+    background-color: red;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+.saveButton:hover {
+    background-color: rgb(228, 2, 2);
+}
+

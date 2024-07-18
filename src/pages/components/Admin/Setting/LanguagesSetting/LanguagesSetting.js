@@ -92,7 +92,7 @@ export default function LanguagesSetting() {
         <form>
           <label htmlFor="name">NAME *</label>
           <select id="name" name="name" className={styles.selectFeild} required>
-            {/* Add your options here */}
+            <option>--</option>
           </select>
           <button type="submit" className={styles.getFileButton} onClick={handleCloseDrawer}>Get File Content</button>
         </form>
