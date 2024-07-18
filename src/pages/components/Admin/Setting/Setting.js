@@ -55,6 +55,7 @@ import PageSetting from "./PageSetting/PageSetting";
 import RoleandPermissionSetting from "./RoleandPermissionSettting/RoleandPermissionSetting";
 import LanguagesSetting from "./LanguagesSetting/LanguagesSetting";
 import SMSGetwaySetting from "./SMSGetwaySetting/SMSGetwaySetting";
+import PaymentGetwaySetting from "./PaymentGetwaySetting/PaymentGetwaySetting";
 
 export default function Setting() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -118,6 +119,8 @@ export default function Setting() {
         return <LanguagesSetting/>;
       case "SMSGetway":
         return <SMSGetwaySetting/>;
+      case "PaymentGetway":
+        return <PaymentGetwaySetting/>;
       default:
         return <div>select item</div>;
     }
@@ -384,8 +387,8 @@ export default function Setting() {
                   </ListItemButton>
                 </ListItem>
 
-                <ListItem disablePadding>
-                  <ListItemButton>
+                <ListItem disablePadding onClick={() => setSelectedPage("PaymentGetway")}>
+                  <ListItemButton selected={selectedPage === "PaymentGetway"}>
                     <ListItemIcon>
                       <UilTransaction />
                     </ListItemIcon>

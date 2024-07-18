@@ -1,0 +1,96 @@
+.PaymentGetwaySettingMain {
+    max-width: 800px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.PaymentGetwaySettingPaymentBtn {
+    display: flex;
+    justify-content: space-between; /* Add space between elements */
+    margin-bottom: 20px;
+}
+
+.gatewayBtn {
+    flex: 1; /* Ensure buttons take up available space */
+    padding: 10px 20px;
+    margin-right: 10px; /* Adjust margin as needed */
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+    max-width: 150px; /* Increase width */
+    text-align: center;
+}
+
+.gatewayBtn:last-child {
+    margin-right: 0; /* Remove margin for the last button */
+}
+
+.gatewayBtn.active {
+    background-color: red;
+    color: white;
+}
+
+.moreGatewaySelect {
+    padding: 10px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    max-width: 150px; /* Increase width */
+    text-align: center;
+}
+
+.PaymentGetwayDiv {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.9);
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.formGroup input{
+    width: 97.5% !important;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.formGroup select{
+    width: 100% !important;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.saveBtn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+}
+
+.PaymentGetwayDiv h2 {
+    color: black;
+    margin-bottom: 20px;
+}
