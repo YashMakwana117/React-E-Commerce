@@ -56,6 +56,7 @@ import RoleandPermissionSetting from "./RoleandPermissionSettting/RoleandPermiss
 import LanguagesSetting from "./LanguagesSetting/LanguagesSetting";
 import SMSGetwaySetting from "./SMSGetwaySetting/SMSGetwaySetting";
 import PaymentGetwaySetting from "./PaymentGetwaySetting/PaymentGetwaySetting";
+import LicenseSetting from "./LicenseSetting/LicenseSetting";
 
 export default function Setting() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -121,6 +122,8 @@ export default function Setting() {
         return <SMSGetwaySetting/>;
       case "PaymentGetway":
         return <PaymentGetwaySetting/>;
+      case "LicenseSetting":
+        return <LicenseSetting/>;
       default:
         return <div>select item</div>;
     }
@@ -396,8 +399,8 @@ export default function Setting() {
                   </ListItemButton>
                 </ListItem>
 
-                <ListItem disablePadding>
-                  <ListItemButton>
+                <ListItem disablePadding onClick={() => setSelectedPage("LicenseSetting")}>
+                  <ListItemButton selected={selectedPage === "LicenseSetting"}>
                     <ListItemIcon>
                       <FontAwesomeIcon icon={faAddressCard} />
                     </ListItemIcon>

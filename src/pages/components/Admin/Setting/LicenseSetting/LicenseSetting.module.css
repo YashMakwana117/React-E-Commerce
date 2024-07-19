@@ -1,0 +1,81 @@
+.licenseContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.9);
+  }
+  
+  .licenseContainer h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .formGroup {
+    margin-bottom: 20px;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #666;
+  }
+  
+  .required {
+    color: red;
+  }
+  
+  .formGroup input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .saveButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .saveButton:hover {
+    background-color: rgb(228, 2, 2);
+  }
+
+@media (min-width: 1450px){
+    .licenseContainer {
+        width: 800px;
+        margin-right: 170px;
+    }
+}
+
+@media (max-width: 1440px){
+    .licenseContainer {
+        width: 600px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+    .licenseContainer {
+        width: 700px;
+    }
+}
+
+@media (max-width: 691px){
+    .licenseContainer {
+        width: 600px;
+    }
+}
+  
+@media (max-width: 576px){
+    .licenseContainer {
+        width: 300px;
+    }
+}
