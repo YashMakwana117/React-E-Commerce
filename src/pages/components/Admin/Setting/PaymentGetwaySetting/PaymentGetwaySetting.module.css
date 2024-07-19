@@ -94,3 +94,36 @@
     color: black;
     margin-bottom: 20px;
 }
+
+
+@media (max-width: 1440px){
+
+    .PaymentGetwaySettingMain{
+        width: 600px;
+    }
+
+}
+
+@media (min-width: 767px) and (max-width: 1024px){
+
+    .PaymentGetwaySettingMain{
+        width: 650px;
+    }
+
+}
+
+@media (max-width: 691px){
+
+    .PaymentGetwaySettingMain{
+        width: 500px;
+    }
+
+}
+
+@media (max-width: 576px){
+
+    .PaymentGetwaySettingMain{
+        width: 300px;
+    }
+
+}
