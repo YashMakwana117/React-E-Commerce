@@ -34,7 +34,7 @@
   }
   
   .select {
-    min-width: 150px;
+    max-width: 150px;
     height: 40px;
   }
   
@@ -123,4 +123,63 @@
 }
 .actions button:active{
     transform: scale(0.95);
+}
+
+/* -----------Media query for responsive------------------------- */
+
+@media (max-width: 1440px){
+    .adProdh2{
+        margin-left: 300px;
+        color: black;
+    }
+
+    .container{
+        width: 1100px;
+        margin-left: 300px;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media (min-width: 767px) and (max-width: 1024px){
+    .adProdh2{
+        margin-left: 10px;
+        color: black;
+    }
+
+    .container{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media (max-width:691px){
+    .adProdh2{
+        margin-left: 10px;
+        color: black;
+    }
+
+    .container{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media (max-width: 576px){
+
+    .adProdh2{
+        margin: 0;
+        color: black;
+    }
+
+    .container{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
 }
