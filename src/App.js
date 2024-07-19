@@ -9,6 +9,7 @@ import ViewProfile from './pages/components/Admin/Administrators/ViewProfile/Vie
 import Customer from './pages/components/Admin/Customer/Customer';
 import Setting from './pages/components/Admin/Setting/Setting';
 import Compony from './pages/components/Admin/Setting/Compony/Compony';
+import ProductsSetting from './pages/components/Admin/Products/ProductsSetting';
 // import SuppierSetting from './pages/components/Admin/Setting/SuppierSetting/SuppierSetting';
 
 
@@ -44,6 +45,7 @@ export default function App() {
           <Route path='/customer' element={<Customer/>} />
           <Route path='/setting' element={<Setting/>}/>
           <Route path='/compony' element={<Compony/>}/>
+          <Route path='/products' element={<ProductsSetting/>}/>
           {/* <Route path='/noty' element={<SuppierSetting/>}/> */}
         </Routes>
 

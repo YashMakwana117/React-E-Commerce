@@ -26,26 +26,27 @@ import {
 
 export default function ProductBrand() {
 
-    const [rowsPerPage, setRowsPerPage] = useState(10);
-    const [pages,setPages] = useState(1);
-    const [open,setOpen] = useState(false);
-    const [openDrawer,setOpenDrawer] = useState(false);
+  const [open,setOpen] = useState(false);
+  const [openDrawer,setOpenDrawer] = useState(false);
   
-    const handleOpenModal = () => {
-      setOpen(true);
-    }
+  const handleOpenModal = () => {
+    setOpen(true);
+  }
   
-    const handleCloseModal = () => {
-      setOpen(false);
-    }
+  const handleCloseModal = () => {
+    setOpen(false);
+  }
   
-    const handleOpenDrawer = () => {
-      setOpenDrawer(true);
-    }
+  const handleOpenDrawer = () => {
+    setOpenDrawer(true);
+  }
   
-    const handleCloseDrawer = () => {
-      setOpenDrawer(false);
-    }
+  const handleCloseDrawer = () => {
+    setOpenDrawer(false);
+  }
+  
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [pages,setPages] = useState(1);
   
     const handleChangeRowsPerPage = (event) => {
       setRowsPerPage(event.target.value);
