@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styles from './Products.module.css';
 import TopBar from '../TopBar/TopBar';
-
 import { 
     Table, 
     TableBody, 
@@ -15,7 +14,7 @@ import {
     MenuItem, 
     Typography,
     Pagination,
-    
+    Drawer,
   } from '@mui/material';
 
 export default function ProductsSetting() {
@@ -52,6 +51,17 @@ export default function ProductsSetting() {
     const endIdx = startIndx + rowsPerPage;
     const paginationProduct = product.slice(startIndx,endIdx);
 
+    const [drawerOpen,setDrawerOpen] = useState(false);
+    const [tabChange,setTabChange] = useState('Information');
+
+    const handleOpenDrawer = () => setDrawerOpen(true);
+    const handleCloseDrawer = () => setDrawerOpen(false);
+
+    const handleTabChange = (e) => {
+        setTabChange(e.target.value)
+    }
+
+
   return (
     <>
         <TopBar/>
@@ -69,7 +79,7 @@ export default function ProductsSetting() {
                 <MenuItem value={20}>20</MenuItem>
                 <MenuItem value={50}>50</MenuItem>
                 </Select>
-                <button  style={{backgroundColor:'red',border:'none',height:'40px',color:'white',borderRadius:'6px',cursor:'pointer'}}>+ Add Product</button>
+                <button  style={{backgroundColor:'red',width:'200px',border:'none',height:'40px',color:'white',borderRadius:'6px',cursor:'pointer'}}>+ Add Product</button>
             </div>
             </div>
             <TableContainer component={Paper}>
@@ -95,7 +105,7 @@ export default function ProductsSetting() {
                         <span className={styles.statusActive}>{prod.status}</span>
                     </TableCell>
                     <TableCell>
-                        <Button size="small">View</Button>
+                        <Button size="small" onClick={handleOpenDrawer} >View</Button>
                         <Button size="small" color="success">Edit</Button>
                         <Button size="small" color="error">Delete</Button>
                     </TableCell>
@@ -114,6 +124,67 @@ export default function ProductsSetting() {
                 />
             </div>
         </div>
+{/* ------------Top Drawer start here------------- */}
+
+        <Drawer
+        anchor="top"
+        open={drawerOpen}
+        onClose={handleCloseDrawer}
+        classes={{ paper: styles.drawerPaper }}
+      >
+        <div className={styles.content}>
+          <div className={styles.tabs}>
+            <button className={`${styles.tab} ${tabChange === "Information" ? styles.active : ''}`} value='Information' onClick={handleTabChange}>Information</button>
+            <button className={`${styles.tab} ${tabChange === "Images" ? styles.active : ''}`} value='Images' onClick={handleTabChange}>Images</button>
+            <button className={`${styles.tab} ${tabChange === "Variation" ? styles.active : ''}`} onClick={handleTabChange} value='Variation'>Variation</button>
+            <select className={styles.select}>
+              <option>More</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </div>
+          {tabChange === "Information" && 
+          <div className={styles.information}>
+            <h3>Information</h3>
+            <div className={styles.details}>
+              <div className={styles.detailColumn}>
+                <p><strong>Name:</strong> Fall Repair Shampoo 82.5ml</p>
+                <p><strong>Category:</strong> Shampoo</p>
+                <p><strong>Brand:</strong> Loreal</p>
+                <p><strong>Buying Price:</strong> 79.00</p>
+                <p><strong>Maximum Purchase Quantity:</strong> 50</p>
+                <p><strong>Weight:</strong> ---</p>
+                <p><strong>Purchasable:</strong> Yes</p>
+                <p><strong>Refundable:</strong> No</p>
+                <p><strong>Tags:</strong> ---</p>
+                <p><strong>Description:</strong> ---</p>
+              </div>
+              <div className={styles.detailColumn}>
+                <p><strong>SKU:</strong> 89140</p>
+                <p><strong>Barcode:</strong> EAN-13</p>
+                <p><strong>Tax:</strong> ---</p>
+                <p><strong>Selling Price:</strong> 89.00</p>
+                <p><strong>Low Stock Quantity Warning:</strong> 10</p>
+                <p><strong>Unit:</strong> Milliliters</p>
+                <p><strong>Show Stock Out:</strong> Disable</p>
+                <p><strong>Status:</strong> Active</p>
+              </div>
+            </div>
+          <button onClick={handleCloseDrawer}>Close</button>
+          </div>
+          }
+          {tabChange === "Images" && 
+            <h2>Images</h2>
+          }
+          {tabChange === "Variation" && 
+            <h2>Variation</h2>
+          }
+        </div>
+        </Drawer>
+
+{/* ----------------------------end----------------------------------------------- */}
+
     </>
   )
 }
