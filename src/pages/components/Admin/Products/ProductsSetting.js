@@ -15,6 +15,7 @@ import {
     Typography,
     Pagination,
     Drawer,
+    Rating,
   } from '@mui/material';
 
 export default function ProductsSetting() {
@@ -191,6 +192,8 @@ export default function ProductsSetting() {
                 <p><strong>Unit:</strong> Milliliters</p>
                 <p><strong>Show Stock Out:</strong> Disable</p>
                 <p><strong>Status:</strong> Active</p>
+                <Rating name={`rating-${selectedProduct.id}`} value={selectedProduct.rating.rate} precision={0.1} readOnly></Rating>
+                <p>({selectedProduct.rating.count} reviews)</p>
               </div>
             </div>
           <button onClick={handleCloseDrawer}>Close</button>
@@ -201,6 +204,7 @@ export default function ProductsSetting() {
                 <h2 style={{color:'black'}}>Images</h2>
                 <img src={selectedProduct.image} alt='product'></img>
                 <h4>{selectedProduct.title}</h4>
+                <button onClick={handleCloseDrawer}>Close</button>
             </div>
           }
           {tabChange === "Variation" && 
