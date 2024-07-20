@@ -17,6 +17,10 @@ import {
     Drawer,
     Rating,
   } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 export default function ProductsSetting() {
     const [products,setProducts] = useState([]);
@@ -26,6 +30,8 @@ export default function ProductsSetting() {
     const [drawerOpen,setDrawerOpen] = useState(false);
     const [tabChange,setTabChange] = useState('Information');
     const [loading, setLoading] = useState(true);
+    const [rightDrawer,setRightdrawer] = useState(false);
+    const [editorContent, setEditorContent] = useState('');
 
     const handleChangeRowsPerPage = (e) => {
         setRowsPerPage(e.target.value);
@@ -83,7 +89,22 @@ export default function ProductsSetting() {
         return <div className={styles.loading}>Loading...</div>;
     }
 
-    
+    const handleRightDrawerOpen = () => setRightdrawer(true);
+    const handleRightDrawerClose = () => setRightdrawer(false);
+
+    const modules = {
+        toolbar: [
+          [{ 'font': [] }],
+          [{ 'size': ['small', false, 'large', 'huge'] }],
+          ['bold', 'italic', 'underline', 'strike'],
+          [{'script': 'sub'}, {'script': 'super'}],
+          [{'list': 'ordered'}, {'list': 'bullet'}],
+          [{ 'align': [] }],
+          [{ 'color': [] }, { 'background': [] }],
+          ['link', 'image'],
+          ['clean']
+        ],
+      };
 
   return (
     <>
@@ -102,7 +123,7 @@ export default function ProductsSetting() {
                 <MenuItem value={20}>20</MenuItem>
                 <MenuItem value={50}>50</MenuItem>
                 </Select>
-                <button  style={{backgroundColor:'red',width:'200px',border:'none',height:'40px',color:'white',borderRadius:'6px',cursor:'pointer'}}>+ Add Product</button>
+                <button  style={{backgroundColor:'red',width:'200px',border:'none',height:'40px',color:'white',borderRadius:'6px',cursor:'pointer'}} onClick={() => handleRightDrawerOpen()}>+ Add Product</button>
             </div>
             </div>
             <TableContainer component={Paper}>
@@ -129,7 +150,7 @@ export default function ProductsSetting() {
                     </TableCell>
                     <TableCell>
                         <Button size="small" onClick={() => handleOpenDrawer(prod)} >View</Button>
-                        <Button size="small" color="success">Edit</Button>
+                        <Button size="small" color="success" onClick={() => handleRightDrawerOpen()}>Edit</Button>
                         <Button size="small" color="error">Delete</Button>
                     </TableCell>
                     </TableRow>
@@ -214,6 +235,131 @@ export default function ProductsSetting() {
         </Drawer>
 
 {/* ----------------------------end----------------------------------------------- */}
+
+    <Drawer
+        anchor="right"
+        open={rightDrawer}
+        onClose={handleRightDrawerClose}
+        >
+        <div className={styles.drawerContent}>
+            <div className={styles.header}>
+            <h2 style={{color:'black'}}>Products</h2>
+            <IconButton onClick={handleRightDrawerClose}>
+                <CloseIcon />
+            </IconButton>
+            </div>
+            <div className={styles.form}>
+            <div className={styles.formGroup}>
+                <label>Name *</label>
+                <input type="text" required />
+            </div>
+            <div className={styles.formGroup}>
+                <label>SKU *</label>
+                <input type="text" required value="83066" readOnly />
+            </div>
+            <div className={styles.formGroup}>
+                <label>Category *</label>
+                <select required>
+                <option value="">--</option>
+                </select>
+            </div>
+            <div className={styles.formGroup}>
+                <label>Barcode *</label>
+                <input type="text" required />
+            </div>
+            <div className={styles.formGroup}>
+                <label>Buying Price *</label>
+                <input type="text" required />
+            </div>
+            <div className={styles.formGroup}>
+                <label>Selling Price *</label>
+                <input type="text" required />
+            </div>
+            <div className={styles.formGroup}>
+                <label>Tax *</label>
+                <select required>
+                <option value="">--</option>
+                </select>
+            </div>
+            <div className={styles.formGroup}>
+                <label>Brand *</label>
+                <select required>
+                <option value="">--</option>
+                </select>
+            </div>
+            <div className={styles.radioGroup}>
+                <label>Status *</label>
+                <div>
+                <input type="radio" id="active" name="status" value="active" checked />
+                <label htmlFor="active">Active</label>
+                <input type="radio" id="inactive" name="status" value="inactive" />
+                <label htmlFor="inactive">Inactive</label>
+                </div>
+            </div>
+            <div className={styles.radioGroup}>
+                <label>Can Purchasable *</label>
+                <div>
+                <input type="radio" id="yes" name="purchasable" value="yes" checked />
+                <label htmlFor="yes">Yes</label>
+                <input type="radio" id="no" name="purchasable" value="no" />
+                <label htmlFor="no">No</label>
+                </div>
+            </div>
+            <div className={styles.radioGroup}>
+                <label>Show Stock Out *</label>
+                <div>
+                <input type="radio" id="enable" name="stockOut" value="enable" />
+                <label htmlFor="enable">Enable</label>
+                <input type="radio" id="disable" name="stockOut" value="disable" checked />
+                <label htmlFor="disable">Disable</label>
+                </div>
+            </div>
+            <div className={styles.radioGroup}>
+                <label>Refundable *</label>
+                <div>
+                <input type="radio" id="refundableYes" name="refundable" value="yes" />
+                <label htmlFor="refundableYes">Yes</label>
+                <input type="radio" id="refundableNo" name="refundable" value="no" checked />
+                <label htmlFor="refundableNo">No</label>
+                </div>
+            </div>
+            <div className={styles.formGroup}>
+                <label>Maximum Purchase Quantity *</label>
+                <input type="text" required />
+            </div>
+            <div className={styles.formGroup}>
+                <label>Low Stock Quantity Warning *</label>
+                <input type="text" required />
+            </div>
+            <div className={styles.formGroup}>
+                <label>Unit *</label>
+                <select required>
+                <option value="">--</option>
+                </select>
+            </div>
+            <div className={styles.formGroup}>
+                <label>Weight</label>
+                <input type="text" />
+            </div>
+            <div className={styles.formGroup}>
+                <label>Tags</label>
+                <input type="text" />
+            </div>
+            </div>
+            <div className={styles.formGroup}>
+                <label>DESCRIPTION *</label>
+                <div className={styles.editorToolbar}>
+                    {/* Add editor toolbar buttons here */}
+                    <ReactQuill 
+                    theme="snow"
+                    value={editorContent}
+                    onChange={setEditorContent}
+                    modules={modules}
+                />
+                </div>
+            </div>
+        </div>
+    </Drawer>
 
     </>
   )
