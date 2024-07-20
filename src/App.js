@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import HomePage from './pages/HomePage/Home';
 import Login from './pages/LoginPage/Login';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -10,19 +10,13 @@ import Customer from './pages/components/Admin/Customer/Customer';
 import Setting from './pages/components/Admin/Setting/Setting';
 import Compony from './pages/components/Admin/Setting/Compony/Compony';
 import ProductsSetting from './pages/components/Admin/Products/ProductsSetting';
-// import SuppierSetting from './pages/components/Admin/Setting/SuppierSetting/SuppierSetting';
-
-
-
-
-
-
-
-
+import Purchase from './pages/components/Admin/Purchase/Purchase';
+import LinearProgress from '@mui/material/LinearProgress';
 
 export default function App() {
   const [collapsed, setCollapsed] = useState(false);
-
+  const [loading, setLoading] = useState(true);
+  
   // Define routes where SideBar should be hidden
   const hideSideBarRoutes = ['/', '/Home'];
 
@@ -30,6 +24,28 @@ export default function App() {
   const shouldHideSideBar = (path) => {
     return hideSideBarRoutes.includes(path);
   };
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setLoading(false);
+    };
+
+    // Check if the page is already loaded
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+
+      // Cleanup event listener on component unmount
+      return () => {
+        window.removeEventListener('load', handleLoad);
+      };
+    }
+  }, []);
+
+  if (loading) {
+    return <LinearProgress />;
+  }
 
   return (
     <div>
@@ -46,6 +62,7 @@ export default function App() {
           <Route path='/setting' element={<Setting/>}/>
           <Route path='/compony' element={<Compony/>}/>
           <Route path='/products' element={<ProductsSetting/>}/>
+          <Route path='/purchase' element={<Purchase/>}/>
           {/* <Route path='/noty' element={<SuppierSetting/>}/> */}
         </Routes>
 

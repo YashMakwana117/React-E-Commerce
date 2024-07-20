@@ -1,0 +1,205 @@
+.adminPurchaseMain{
+    margin-left: 300px;
+}
+
+.adminPurchaseMain h2{
+    color: black;
+}
+
+.container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    max-width: 1500px;
+    margin-bottom: 50px;
+    width: 100%;   
+  }
+  
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h5 {
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .select {
+    max-width: 150px;
+    height: 40px;
+  }
+  
+  button.MuiButton-root {
+    padding: 6px 16px;
+  }
+  
+  .MuiTableContainer-root {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .MuiTableHead-root {
+    background-color: #4CAF50;
+  }
+  
+  .MuiTableCell-head {
+    color: white;
+    font-weight: bold;
+  }
+  
+  .MuiTableCell-body {
+    color: #555;
+  }
+  
+  .MuiTableRow-root:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .statusActive {
+    background-color: #e6f4ea;
+    color: #1e8e3e;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+  }
+  
+  .statusInactive {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .MuiPagination-root .MuiPaginationItem-root {
+    color: #4CAF50;
+  }
+  
+  .MuiPaginationItem-page.Mui-selected {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .button {
+    margin-right: 10px;
+  }
+  
+  .viewButton {
+    color: #FF0000;
+  }
+  
+  .editButton {
+    color: #4CAF50;
+  }
+  
+  .deleteButton {
+    color: #FF0000;
+    border-color: #FF0000;
+  }
+  
+
+.actions button:hover{
+    transform: scale(1.05);
+    background-color: rgb(235, 2, 2);
+}
+.actions button:active{
+    transform: scale(0.95);
+}
+
+/* -----------Media query for responsive------------------------- */
+
+@media (max-width: 1440px){
+
+    .adminPurchaseMain{
+        margin: 0;
+    }
+
+    .adminPurchaseMain h2{
+        margin-left: 300px;
+    }
+
+    .container{
+        width: 1100px;
+        margin-left: 300px;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media (min-width: 767px) and (max-width: 1024px){
+    
+    .adminPurchaseMain{
+        margin: 0;
+    }
+
+    .adProdh2{
+        margin-left: 10px;
+        color: black;
+    }
+
+    .container{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width:691px){
+    
+    .adminPurchaseMain{
+        margin: 0;
+    }
+    
+    .adProdh2{
+        margin-left: 10px;
+        color: black;
+    }
+
+    .container{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media (max-width: 576px){
+
+    .adminPurchaseMain{
+        margin: 0;
+    }
+    
+    .adProdh2{
+        margin: 0;
+        color: black;
+    }
+
+    .container{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+}
