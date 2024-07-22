@@ -15,6 +15,21 @@ import {
     Pagination,
     LinearProgress,
   } from '@mui/material';
+import debounce from 'lodash.debounce';
+
+const debouncedUpdateQuantity = debounce(async (id, quantity) => {
+    try {
+        await fetch(`https://669b65a4276e45187d355835.mockapi.io/purchase/view/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ quantity }),
+        });
+    } catch {
+        console.log('error on edit');
+    }
+}, 500);
 
 
 export default function EditView() {
@@ -52,25 +67,27 @@ export default function EditView() {
     const totalPage = Math.ceil(editData.length / rowsPerPage);
 
     
-    const updateQuantityOnChange = async (id,quantity) => {
-        try{
-            await fetch(`https://669b65a4276e45187d355835.mockapi.io/purchase/view/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({quantity}),
-            });
-        }catch{
-            console.log('error on edit');
-        }
-    };
+    // const updateQuantityOnChange = async (id,quantity) => {
+    //     try{
+    //         await fetch(`https://669b65a4276e45187d355835.mockapi.io/purchase/view/${id}`, {
+    //             method: 'PUT',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({quantity}),
+    //         });
+    //     }catch{
+    //         console.log('error on edit');
+    //     }
+    // };
+
+    // const debouncedUpdateQuantity = useCallback(debounce(updateQuantityOnChange, 500), []);
     
     const handleQuantityChange = (index,value) => {
         const newEditData = [...editData];
         newEditData[index].quantity = value;
         setEditData(newEditData);
-        updateQuantityOnChange(newEditData[index].id,value);
+        debouncedUpdateQuantity(newEditData[index].id,value);
     }
 
   return (
