@@ -13,6 +13,7 @@ import ProductsSetting from './pages/components/Admin/Products/ProductsSetting';
 import Purchase from './pages/components/Admin/Purchase/Purchase';
 import LinearProgress from '@mui/material/LinearProgress';
 import ItemView from './pages/components/Admin/Purchase/ItemView/ItemView';
+import EditView from './pages/components/Admin/Purchase/EditView/EditView';
 
 export default function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -65,6 +66,7 @@ export default function App() {
           <Route path='/products' element={<ProductsSetting/>}/>
           <Route path='/purchase' element={<Purchase/>}/>
           <Route path='/purchase/view' element={<ItemView/>}/>
+          <Route path='/purchase/edit' element={<EditView/>}/>
           {/* <Route path='/noty' element={<SuppierSetting/>}/> */}
         </Routes>
 

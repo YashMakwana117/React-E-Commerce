@@ -70,6 +70,10 @@ export default function Purchase() {
         navigate('/purchase/view');
     }
 
+    const handleNavigattionEdit = () => {
+        navigate('/purchase/edit');
+    }
+
   return (
     <>
         <TopBar/>
@@ -120,7 +124,7 @@ export default function Purchase() {
                     </TableCell>
                     <TableCell>
                         <Button size="small" onClick={handleNavigattion}>View</Button>
-                        <Button size="small" color="success">Edit</Button>
+                        <Button size="small" color="success" onClick={handleNavigattionEdit}>Edit</Button>
                         <Button size="small" color="error">Delete</Button>
                         <Button color="secondary">Add Payment</Button>
                         <Button size="small">View Payment</Button>
