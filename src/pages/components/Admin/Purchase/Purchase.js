@@ -16,6 +16,7 @@ import {
     Pagination,
     LinearProgress
   } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Purchase() {
@@ -64,6 +65,10 @@ export default function Purchase() {
     const paginationPurchase = purchase.slice((page - 1) * rowsPerPage,page * rowsPerPage);
     const totalPage = Math.ceil(purchase.length / rowsPerPage);
 
+    let navigate = useNavigate();
+    const handleNavigattion = () => {
+        navigate('/purchase/view');
+    }
 
   return (
     <>
@@ -84,7 +89,7 @@ export default function Purchase() {
                 <MenuItem value={20}>20</MenuItem>
                 <MenuItem value={50}>50</MenuItem>
                 </Select>
-                <button  style={{backgroundColor:'red',width:'200px',border:'none',height:'40px',color:'white',borderRadius:'6px',cursor:'pointer'}}>+ Add Product</button>
+                <button  style={{backgroundColor:'red',width:'200px',border:'none',height:'40px',color:'white',borderRadius:'6px',cursor:'pointer'}}>Puchase Details</button>
             </div>
             </div>
             <TableContainer component={Paper}>
@@ -114,7 +119,7 @@ export default function Purchase() {
                         <span className={styles.statusActive}>{prod.paymentStatus}</span>
                     </TableCell>
                     <TableCell>
-                        <Button size="small">View</Button>
+                        <Button size="small" onClick={handleNavigattion}>View</Button>
                         <Button size="small" color="success">Edit</Button>
                         <Button size="small" color="error">Delete</Button>
                         <Button color="secondary">Add Payment</Button>

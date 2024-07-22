@@ -12,6 +12,7 @@ import Compony from './pages/components/Admin/Setting/Compony/Compony';
 import ProductsSetting from './pages/components/Admin/Products/ProductsSetting';
 import Purchase from './pages/components/Admin/Purchase/Purchase';
 import LinearProgress from '@mui/material/LinearProgress';
+import ItemView from './pages/components/Admin/Purchase/ItemView/ItemView';
 
 export default function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -63,6 +64,7 @@ export default function App() {
           <Route path='/compony' element={<Compony/>}/>
           <Route path='/products' element={<ProductsSetting/>}/>
           <Route path='/purchase' element={<Purchase/>}/>
+          <Route path='/purchase/view' element={<ItemView/>}/>
           {/* <Route path='/noty' element={<SuppierSetting/>}/> */}
         </Routes>
 
