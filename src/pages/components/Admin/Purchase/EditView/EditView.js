@@ -85,10 +85,22 @@ export default function EditView() {
     
     const handleQuantityChange = (index,value) => {
         const newEditData = [...editData];
-        newEditData[index].quantity = value;
+        const actualIndex = (page - 1) * rowsPerPage + index;
+        newEditData[actualIndex].quantity = value;
         setEditData(newEditData);
-        debouncedUpdateQuantity(newEditData[index].id,value);
+        debouncedUpdateQuantity(newEditData[actualIndex].id, value);
     }
+
+    const handleDeleteData = async (id) => {
+      try{
+        await fetch(`https://669b65a4276e45187d355835.mockapi.io/purchase/view/${id}`,{
+          method: 'DELETE',
+        });
+          setEditData(editData.filter(item => item.id !==id));
+      }catch{
+        console.log('error in delete');
+      }
+    };
 
   return (
     <>
@@ -170,7 +182,7 @@ export default function EditView() {
           </TableHead>
           <TableBody>
             {pagination.map((edit,index) => (
-                <TableRow>
+                <TableRow key={edit.id}>
                 <TableCell>{edit.product}</TableCell>
                 <TableCell>{edit.unitCost}</TableCell>
                 <TableCell>
@@ -180,7 +192,7 @@ export default function EditView() {
                 <TableCell>0.00</TableCell>
                 <TableCell>{(edit.unitCost * edit.quantity).toFixed(2)}</TableCell>
                 <TableCell>
-                    <Button size="small" color="error">Delete</Button>
+                    <Button size="small" color="error" onClick={() => handleDeleteData(edit.id)} >Delete</Button>
                 </TableCell>
                 </TableRow>
             ))}
