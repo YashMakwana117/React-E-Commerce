@@ -1,0 +1,28 @@
+.addStockMain{
+    margin-left: 300px;
+}
+
+.addStockMain h2{
+    color: black;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .select {
+    max-width: 150px;
+    height: 40px;
+    margin-right: 20px;
+  }
+
+
+.statusActive {
+    background-color: #e6f4ea;
+    color: #1e8e3e;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+  }

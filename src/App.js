@@ -14,6 +14,8 @@ import Purchase from './pages/components/Admin/Purchase/Purchase';
 import LinearProgress from '@mui/material/LinearProgress';
 import ItemView from './pages/components/Admin/Purchase/ItemView/ItemView';
 import EditView from './pages/components/Admin/Purchase/EditView/EditView';
+import Damages from './pages/components/Admin/Damages/Damages';
+import Stock from './pages/components/Admin/Stock/Stock';
 
 export default function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -67,6 +69,8 @@ export default function App() {
           <Route path='/purchase' element={<Purchase/>}/>
           <Route path='/purchase/view' element={<ItemView/>}/>
           <Route path='/purchase/edit' element={<EditView/>}/>
+          <Route path='/damages' element={<Damages/>}/>
+          <Route path='/stock' element={<Stock/>}/>
           {/* <Route path='/noty' element={<SuppierSetting/>}/> */}
         </Routes>
 
