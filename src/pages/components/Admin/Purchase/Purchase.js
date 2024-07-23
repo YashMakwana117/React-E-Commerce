@@ -14,7 +14,11 @@ import {
     MenuItem, 
     Typography,
     Pagination,
-    LinearProgress
+    LinearProgress,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    DialogActions,
   } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
@@ -25,6 +29,11 @@ export default function Purchase() {
     const [page,setPage] = useState(1);
     const [purchase,setPurchase] = useState([]);
     const [loading,setLoading] = useState(true);
+    const [modal,setModal] = useState(false);
+    const [addproductName, setAddProductName] = useState('');
+    const [addunitCost, setAddUnitCost] = useState('');
+    const [addquantity, setAddQuantity] = useState('');
+
 
     const handleChangeRowsPerPage = (e) => {
         setRowsPerPage(e.target.value);
@@ -74,6 +83,38 @@ export default function Purchase() {
         navigate('/purchase/edit');
     }
 
+    const habdleOpenModal = () => {
+        setAddProductName('');
+        setAddQuantity('');
+        setAddUnitCost('');
+        setModal(true);
+    }
+
+    const handleCloseModal = () => setModal(false);
+
+        const addNewProduct = async () => {
+            const newProduct = {
+                product: addproductName,
+                quantity: addquantity,
+                unitCost: addunitCost,
+            };
+            try{
+                    await fetch('https://669b65a4276e45187d355835.mockapi.io/purchase/view',{
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(newProduct),
+                });
+                setAddProductName('');
+                setAddQuantity('');
+                setAddUnitCost('');
+                setModal(false);
+            }catch{
+                console.log('error not add product in api');
+            }
+        };
+
   return (
     <>
         <TopBar/>
@@ -93,7 +134,7 @@ export default function Purchase() {
                 <MenuItem value={20}>20</MenuItem>
                 <MenuItem value={50}>50</MenuItem>
                 </Select>
-                <button  style={{backgroundColor:'red',width:'200px',border:'none',height:'40px',color:'white',borderRadius:'6px',cursor:'pointer'}}>Puchase Details</button>
+                <button  style={{backgroundColor:'red',width:'200px',border:'none',height:'40px',color:'white',borderRadius:'6px',cursor:'pointer'}} onClick={habdleOpenModal}>+ Add Puchase Details</button>
             </div>
             </div>
             <TableContainer component={Paper}>
@@ -145,6 +186,27 @@ export default function Purchase() {
             </div>
         </div>
         </div>
+        <Dialog
+            open={modal}
+            onClose={handleCloseModal}
+            aria-labelledby="dialog-title"
+            aria-describedby="dialog-description"
+        >
+            <DialogTitle id="dialog-title" style={{color:'black'}}>Add Purchase Details</DialogTitle>
+            <DialogContent>
+                <div style={{display:'flex',gap:10}}>
+                    <input type='text' name='addprod' value={addproductName} onChange={(e) => setAddProductName(e.target.value)} placeholder='Enter Product Name' required />
+                    <input type='number' name='addunitCost' value={addunitCost} onChange={(e) => setAddUnitCost(e.target.value)} placeholder='Enter Cost of Product' required />
+                    <input type='number' name='addquantity' value={addquantity} onChange={(e) => setAddQuantity(e.target.value)} placeholder='Enter Quantity' required />
+                </div>
+            </DialogContent>
+            <DialogActions>
+            <Button onClick={handleCloseModal}>Cancel</Button>
+            <Button onClick={addNewProduct} color="primary">
+                Save
+            </Button>
+            </DialogActions>
+        </Dialog>
     </>
   )
 }
