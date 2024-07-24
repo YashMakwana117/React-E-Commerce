@@ -1,0 +1,24 @@
+.ReturnOrderMain{
+    margin-left: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ReturnOrderMain h2{
+    color: black;
+}
+
+.ReturnOrderMaininner{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.9);
+    padding: 20px;
+    border-radius: 6px;
+    margin-right: 15px;
+}
+
+.ReturnOrderMainHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

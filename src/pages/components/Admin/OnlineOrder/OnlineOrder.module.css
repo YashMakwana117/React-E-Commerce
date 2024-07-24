@@ -1,0 +1,30 @@
+.OnlineOrderMain {
+    margin-left: 300px;
+    padding: 20px;
+  }
+  
+  .OnlineOrderMain h2 {
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .OnlineOrderMaininner {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 6px;
+  }
+  
+  .OnlineOrderMainHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .TableFooter {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+  }
