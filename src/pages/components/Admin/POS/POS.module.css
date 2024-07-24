@@ -1,0 +1,244 @@
+.posContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 300px;
+  margin-right: 20px;
+}
+
+.posContainer h2 {
+  color: black;
+}
+
+.posDrawerComponent{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.posDrawerComponent button{
+  height: 30px;
+  width: 120px;
+  border: none;
+  background-color: red;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.productCard {
+  position: relative;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 200px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 10px;
+}
+
+.productCard img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  align-self: center;
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.productDetails h3 {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.productDetails p {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: #000;
+  margin-top: 10px;
+}
+
+.direction {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around; /* Adjust the space between cards */
+}
+
+.productCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.productCard:active {
+  transform: scale(0.95);
+}
+
+.searchBar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.searchBar input,
+.searchBar select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+}
+
+.posSelect {
+  width: 390px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+  .posContainer {
+    margin-left: 4%;
+    margin-right: 4%;
+    width: 92%;
+  }
+
+  .posContainer h2 {
+    font-size: 1.8vw;
+  }
+}
+
+@media (max-width: 992px) {
+  .posContainer {
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 94%;
+  }
+
+  .posContainer h2 {
+    font-size: 1.6vw;
+  }
+
+  .productCard {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .posContainer {
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 96%;
+  }
+
+  .posContainer h2 {
+    font-size: 1.4vw;
+  }
+
+  .productCard {
+    max-width: 150px;
+  }
+
+  .searchBar {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .posSelect {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .posContainer {
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 98%;
+  }
+
+  .posContainer h2 {
+    font-size: 1.2vw;
+  }
+
+  .productCard {
+    max-width: 120px;
+  }
+
+  .searchBar {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .posSelect {
+    width: 100%;
+  }
+}
+
+
+/* -----------------------------------Drawer Css--------------------------------------- */
+
+.orderSummary {
+  width: 300px; /* Adjust as needed */
+  position: fixed;
+  right: 0;
+  top: 0; /* Adjust if you have a top bar */
+  bottom: 0;
+  background-color: #f5f5f5;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.orderContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.customerType {
+  margin-bottom: 20px;
+}
+
+.boxIcon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.orderDetails {
+  flex-grow: 1;
+}
+
+.orderItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.walkingcostmer{
+  width: 100%;
+}
+
+.orderDetails button{
+  height: 30px;
+  width: 120px;
+  border: none;
+  background-color: red;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}

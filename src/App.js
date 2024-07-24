@@ -16,6 +16,7 @@ import ItemView from './pages/components/Admin/Purchase/ItemView/ItemView';
 import EditView from './pages/components/Admin/Purchase/EditView/EditView';
 import Damages from './pages/components/Admin/Damages/Damages';
 import Stock from './pages/components/Admin/Stock/Stock';
+import POS from './pages/components/Admin/POS/POS';
 
 export default function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -71,6 +72,7 @@ export default function App() {
           <Route path='/purchase/edit' element={<EditView/>}/>
           <Route path='/damages' element={<Damages/>}/>
           <Route path='/stock' element={<Stock/>}/>
+          <Route path='/pos' element={<POS/>}/>
           {/* <Route path='/noty' element={<SuppierSetting/>}/> */}
         </Routes>
 
