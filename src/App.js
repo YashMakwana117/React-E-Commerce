@@ -17,6 +17,7 @@ import EditView from './pages/components/Admin/Purchase/EditView/EditView';
 import Damages from './pages/components/Admin/Damages/Damages';
 import Stock from './pages/components/Admin/Stock/Stock';
 import POS from './pages/components/Admin/POS/POS';
+import PosOrder from './pages/components/Admin/POSOrder/PosOrder';
 
 export default function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -73,6 +74,7 @@ export default function App() {
           <Route path='/damages' element={<Damages/>}/>
           <Route path='/stock' element={<Stock/>}/>
           <Route path='/pos' element={<POS/>}/>
+          <Route path='/posOrder' element={<PosOrder/>}/>
           {/* <Route path='/noty' element={<SuppierSetting/>}/> */}
         </Routes>
 

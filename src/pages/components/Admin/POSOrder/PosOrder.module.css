@@ -1,0 +1,27 @@
+.posOrderMain{
+    display: flex;
+    flex-direction: column;
+    margin-left: 300px;
+}
+
+.posOrderMain h2{
+    color: black;
+}
+
+.posOrderMaininner{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.9);
+    padding: 20px;
+    margin-right: 15px;
+    border-radius: 6px;
+}
+
+.statusActive {
+    background-color: #e6f4ea;
+    color: #1e8e3e;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+  }
+  

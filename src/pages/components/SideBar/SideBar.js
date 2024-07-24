@@ -46,7 +46,7 @@ export default function SideBar({ collapsed, setCollapsed }) {
               <Link to="/pos">POS</Link>
             </Menu.Item>
             <Menu.Item key="pos-orders" icon={<FontAwesomeIcon icon={faClipboardList} className="fa-icon" />}>
-              <Link to="/pos-orders">POS Orders</Link>
+              <Link to="/posOrder">POS Orders</Link>
             </Menu.Item>
             <Menu.Item key="online-orders" icon={<FontAwesomeIcon icon={faClipboardCheck} className="fa-icon" />}>
               <Link to="/online-orders">Online Orders</Link>
