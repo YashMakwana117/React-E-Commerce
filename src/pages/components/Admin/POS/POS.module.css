@@ -242,3 +242,151 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
+/* Media queries for responsiveness */
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  .orderSummary {
+    width: 400px; /* Adjust as needed */
+  }
+
+  .boxIcon {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .orderSummary {
+    width: 350px; /* Adjust as needed */
+  }
+
+  .boxIcon {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767px) {
+  .orderSummary {
+    width: 100%; /* Full width for smaller screens */
+    padding: 10px;
+  }
+
+  .boxIcon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .orderDetails button {
+    width: 100px;
+    height: 25px;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+  .orderSummary {
+    width: 100%; /* Full width for smaller screens */
+    padding: 10px;
+  }
+
+  .boxIcon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .orderDetails button {
+    width: 80px;
+    height: 20px;
+    font-size: 12px;
+  }
+}
+
+/* -------------Modal css------------------------------------ */
+
+.modalContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  max-width: 800px;
+  width: 90%;
+}
+
+.modalImageContainer {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.modalMainImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.modalThumbnail {
+  margin-top: 10px;
+}
+
+.modalThumbnail img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.modalProductDetails {
+  flex: 1;
+}
+
+.modalPrice {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.modalQuantity {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.quantityButton {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.stockStatus {
+  color: red;
+  margin-left: 10px;
+}
+
+.addToCartButton {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}

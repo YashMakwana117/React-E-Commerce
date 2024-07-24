@@ -6,6 +6,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 import Drawer from '@mui/material/Drawer';
 import Slide from '@mui/material/Slide';
 import animation from '../../../../assets/image/walking.gif';
+import Modal from '@mui/material/Modal';
 
 export default function POS() {
   const [data, setData] = useState([]);
@@ -14,6 +15,8 @@ export default function POS() {
   const [selectBrand,setSelectBrand] = useState('');
   const [searchProdutc,setSearchProduct] = useState('');
   const [openDrawer,setOpenDrawer] = useState(false);
+  const [openModal,setOpenModal] = useState(false);
+  const [modalProduct,setModalProduct] = useState(null);
 
   useEffect(() => {
     const fetchPOSData = async () => {
@@ -56,6 +59,14 @@ export default function POS() {
 
   const handleOpenDrawer = () => setOpenDrawer(true);
   const handleCloseDrawer = () => setOpenDrawer(false);
+  const handleOpenModal = (pro) => {
+        setModalProduct(pro);
+        setOpenModal(true);
+    };
+  const handleCloseModal = () => {
+        setModalProduct(null);
+        setOpenModal(false)
+    };
 
   return (
     <>
@@ -95,7 +106,7 @@ export default function POS() {
         { loading && <LinearProgress/> }
         <div className={styles.direction}>
           {filteredProduct.map((product) => (
-            <div key={product.id} className={styles.productCard}>
+            <div key={product.id} className={styles.productCard} onClick={() => handleOpenModal(product)}>
               <img src={product.imageURLs} alt={product.name} />
               <div className={styles.productDetails}>
                 <h3>{product.productName}</h3>
@@ -147,6 +158,43 @@ export default function POS() {
         </div>
         </Slide>
       </Drawer>
+      <Modal
+        open={openModal}
+        onClose={handleCloseModal}
+        aria-labelledby="product-modal-title"
+        aria-describedby="product-modal-description"
+        >
+        <div className={styles.modalContent}>
+            {modalProduct && (
+            <>
+                <div className={styles.modalImageContainer}>
+                <img src={modalProduct.imageURLs} alt={modalProduct.productName} className={styles.modalMainImage} />
+                <div className={styles.modalThumbnail}>
+                    <img src={modalProduct.imageURLs} alt={modalProduct.productName} />
+                </div>
+                </div>
+                <div className={styles.modalProductDetails}>
+                <h2 id="product-modal-title" style={{color:'black'}}>{modalProduct.productName}</h2>
+                <p className={styles.modalPrice}>₹{modalProduct.price}</p>
+                <Rating
+                    name="product-rating"
+                    value={modalProduct.rating}
+                    readOnly
+                />
+                <div className={styles.modalQuantity}>
+                    <span>Quantity:</span>
+                    <button className={styles.quantityButton}>-</button>
+                    <span>1</span>
+                    <button className={styles.quantityButton}>+</button>
+                    <span className={styles.stockStatus}>Stock Out</span>
+                </div>
+                <button className={styles.addToCartButton}>Add to Cart</button>
+                </div>
+                <button onClick={handleCloseModal} className={styles.closeButton}>×</button>
+            </>
+            )}
+        </div>
+        </Modal>
     </>
   );
 }
