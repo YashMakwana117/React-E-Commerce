@@ -1,221 +1,152 @@
-import React, { useState } from 'react';
-import img from '../../../assets/image/11.png';
-import health from '../../../assets/image/health.png';
-import ayurvedicMedicine from '../../../assets/image/ayurvedic.png'; // Add your image paths here
-import ayurvedicKadha from '../../../assets/image/ayurvedic.png'; // Add your image paths here
-import tablet from '../../../assets/image/tablet.png'; // Add your image paths here
-import digestiveAids from '../../../assets/image/digestive.png'; // Add your image paths here
-import hairOil from '../../../assets/image/hairoil.png'; // Add your image paths here
-import chips from '../../../assets/image/chips.png';
-import roll from '../../../assets/image/roll.png';
-import dabur from '../../../assets/image/dabur.png';
-import './MainPage.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faHeart as faHeartSolid, faStar } from '@fortawesome/free-solid-svg-icons';
-import Footer from '../Footer/Footer';
+import React, { useEffect, useRef, useState } from 'react';
+import Layout from '../Layout/Layout';
+import styles from './MainPage.module.css';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import test1 from '../../../assets/image/11.png';
+import test2 from '../../../assets/image/12.png';
+import test3 from '../../../assets/image/13.png';
+import chips from '../../../assets/image/chips.jpg';
+import gro from '../../../assets/image/super.jpg';
+import tasty from '../../../assets/image/tasty.png';
+import { Rating } from '@mui/material';
+import brandImage from '../../../assets/image/dabur.png';
+
 
 export default function MainPage() {
-    const [isHovered, setIsHovered] = useState(false);
+  const [categoryDataMain, setCategoryDataMain] = useState([]);
 
-    const [favorites, setFavorites] = useState({
-        'GK Fabric RollOn 8ml': false,
-        'Odonil Blocks Fruit Blast Mix 50g': false,
-        'GMEN Oil Clear Facewash - 50g': false,
-        'Baby Lips Pink Lolita': false
-    });
-
-    // Function to toggle favorite status of a product
-    const toggleFavorite = (productName) => {
-        setFavorites(prevFavorites => ({
-            ...prevFavorites,
-            [productName]: !prevFavorites[productName]
-        }));
+  useEffect(() => {
+    const fetchCategoryData = async () => {
+      try {
+        const response = await fetch('https://66a0dcd07053166bcabd259b.mockapi.io/homeData');
+        const data = await response.json();
+        setCategoryDataMain(data);
+      } catch (error) {
+        console.log('Error fetching data from API:', error);
+      }
     };
 
-    return (
-        <>
-            <div className="banner-container"
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}>
-                <div className="banner-content">
-                    <div className="grocery-items">
-                        <img src={img} alt="Indian Groceries" />
-                    </div>
-                </div>
-                {isHovered && (
-                    <div className="banner-controls">
-                        <button className="control-btn" id="btnleft"><FontAwesomeIcon icon={faAngleLeft} id='faiconl' /></button>
-                        <button className="control-btn" id="btnright"><FontAwesomeIcon icon={faAngleRight} id='faiconr' /></button>
-                    </div>
-                )}
-            </div>
-            <div className='container'>
-                <div className='cont'>
-                    <h1>Browse by Categories</h1>
-                    <div className='btn-container'>
-                        <button className="btn" id="countleft"><FontAwesomeIcon icon={faAngleLeft} id='faiconl' /></button>
-                        <button className="btn" id="countright"><FontAwesomeIcon icon={faAngleRight} id='faiconr' /></button>
-                    </div>
-                </div>
-                <div className="categories">
-                    <div className="category-item">
-                        <img src={health} alt="Health Care" className="category-image" />
-                        <div className="category-text">
-                            <a href='#' id='aa'>Health Care</a>
-                        </div>
-                    </div>
-                    <div className="category-item">
-                        <img src={ayurvedicMedicine} alt="Ayurvedic Medicine" className="category-image" />
-                        <div className="category-text">
-                            <a href='#' id='aa'>Ayurvedic Medicine</a>
-                        </div>
-                    </div>
-                    <div className="category-item">
-                        <img src={ayurvedicKadha} alt="Ayurvedic Kadha" className="category-image" />
-                        <div className="category-text">
-                            <a href='#' id='aa'>Ayurvedic Kadha</a>
-                        </div>
-                    </div>
-                    <div className="category-item">
-                        <img src={tablet} alt="Tablet" className="category-image" />
-                        <div className="category-text">
-                            <a href='#' id='aa'>Tablet</a>
-                        </div>
-                    </div>
-                    <div className="category-item">
-                        <img src={digestiveAids} alt="Digestive Aids" className="category-image" />
-                        <div className="category-text">
-                            <a href='#' id='aa'>Digestive Aids</a>
-                        </div>
-                    </div>
-                    <div className="category-item">
-                        <img src={hairOil} alt="Hair Oil" className="category-image" />
-                        <div className="category-text">
-                            <a href='#' id='aa'>Hair Oil</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='thimg'>
-                <div className='cat-item'>
-                    <img src={chips} alt='Chips Image' className='chips'></img>
-                </div>
-                <div className='cat-item'>
-                    <img src={chips} alt='Chips Image' className='chips'></img>
-                </div>
-                <div className='cat-item'>
-                    <img src={chips} alt='Chips Image' className='chips'></img>
-                </div>
-            </div>
-            <div className="banner-container">
-                <div className="banner-content">
-                    <div className="grocery-items">
-                        <img src={img} alt="Indian Groceries" />
-                    </div>
-                </div>
-            </div>
-            <div className='popular'>
-                <h1 id='mostPopular'>Most Popular</h1>
-                <div className='btn-show'>
-                    <button className="show" id="showmore">show more</button>
-                </div>
-            </div>
+    fetchCategoryData();
+  }, []);
 
+  const sliderRef = useRef(null);
+  // const sliderBrand = useRef(null);
 
-            <div className="product-grid">
-                <div className="product-card">
-                    <img src={roll} alt="GK Fabric RollOn 8ml" />
-                    <div className="product-details">
-                        <div className="favorite-icon" onClick={() => toggleFavorite('GK Fabric RollOn 8ml')}>
-                            <FontAwesomeIcon icon={favorites['GK Fabric RollOn 8ml'] ? faHeartSolid : faHeart} className="fav-icon" />
-                        </div>
-                        <h3>GK Fabric RollOn 8ml M80P4 CL</h3>
-                        <div className="stars">
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                        </div>
-                        <p>₹80.00</p>
-                    </div>
-                </div>
-                <div className="product-card">
-                    <img src={roll} alt="Odonil Blocks Fruit Blast Mix 50g" />
-                    <div className="product-details">
-                        <div className="favorite-icon" onClick={() => toggleFavorite('Odonil Blocks Fruit Blast Mix 50g')}>
-                            <FontAwesomeIcon icon={favorites['Odonil Blocks Fruit Blast Mix 50g'] ? faHeartSolid : faHeart} className="fav-icon" />
-                        </div>
-                        <h3>Odonil Blocks Fruit Blast Mix 50g</h3>
-                        <div className="stars">
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                        </div>
-                        <p>₹130.00</p>
-                    </div>
-                </div>
-                <div className="product-card">
-                    <img src={roll} alt="GMEN Oil Clear Facewash 50g" />
-                    <div className="product-details">
-                        <div className="favorite-icon" onClick={() => toggleFavorite('GMEN Oil Clear Facewash - 50g')}>
-                            <FontAwesomeIcon icon={favorites['GMEN Oil Clear Facewash - 50g'] ? faHeartSolid : faHeart} className="fav-icon" />
-                        </div>
-                        <h3>GMEN Oil Clear Facewash - 50g</h3>
-                        <div className="stars">
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                        </div>
-                        <p>₹119.00</p>
-                    </div>
-                </div>
-                <div className="product-card">
-                    <img src={roll} alt="Baby Lips Pink Lolita" />
-                    <div className="product-details">
-                        <div className="favorite-icon" onClick={() => toggleFavorite('Baby Lips Pink Lolita')}>
-                            <FontAwesomeIcon icon={favorites['Baby Lips Pink Lolita'] ? faHeartSolid : faHeart} className="fav-icon" />
-                        </div>
-                        <h3>Baby Lips Pink Lolita</h3>
-                        <div className="stars">
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                            <FontAwesomeIcon icon={faStar} />
-                        </div>
-                        <p>₹175.00</p>
-                    </div>
-                </div>
+  const scroll = (direction) => {
+    if (sliderRef.current) {
+      const { scrollLeft, clientWidth } = sliderRef.current;
+      const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+      sliderRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div className={styles.MainPage}>
+      <Layout>
+        <div className={styles.MainPageMain}>
+          <Carousel
+            autoPlay={true}
+            interval={3000}
+            infiniteLoop={true}
+            showArrows={true}
+            showIndicators={false}
+            showStatus={false}
+            showThumbs={false}
+            dynamicHeight={true}
+            className={styles.carouselMain}
+          >
+            <div className={styles.testMain}>
+              <img src={test1} alt='test1' />
             </div>
             <div>
-                <div className='cont'>
-                    <h1 id='brands'>Popular Brands</h1>
-                    <div className='brands-container'>
-                        <button className="brands" id="bleft"><FontAwesomeIcon icon={faAngleLeft} id='faiconl' /></button>
-                        <button className="brands" id="bight"><FontAwesomeIcon icon={faAngleRight} id='faiconr' /></button>
-                    </div>
-                </div>
+              <img src={test2} alt='test2' />
             </div>
-
-            <div className="App">
-                <div className="brand-grid">
-                    <div className="brand-item"><img src={dabur} alt="Dabur" /><a href='#' id='brandlogo'>Dabur</a></div>
-                    <div className="brand-item"><img src={dabur} alt="Odonil" /><a href='#' id='brandlogo'>Odonil</a></div>
-                    <div className="brand-item"><img src={dabur} alt="Loreal" /><a href='#' id='brandlogo'>Loreal</a></div>
-                    <div className="brand-item"><img src={dabur} alt="Odopic" /><a href='#' id='brandlogo'>Odopic</a></div>
-                    <div className="brand-item"><img src={dabur} alt="Dazzl" /><a href='#' id='brandlogo'>Dazzl</a></div>
-                    {/* <div className="brand-item"><img src="odomos.png" alt="Odomos" /><span>Odomos</span></div> */}
-                </div>
-                <Footer/>
+            <div>
+              <img src={test3} alt='test3' />
             </div>
+          </Carousel>
 
-        </>
-    );
+          <div className={styles.MainPageCategories}>
+            <div className={styles.MainPageCategoriesHeader}>
+              <h2 style={{ color: 'black' }}>Browse by Category</h2>
+              <div className={styles.MainPagebtn}>
+                <button onClick={() => scroll('left')} className={styles.navButton}>&lt;</button>
+                <button onClick={() => scroll('right')} className={styles.navButton}>&gt;</button>
+              </div>
+            </div>
+            <div className={styles.MainPageCategoriesDiv}>
+              <div className={styles.categoriesContainer} ref={sliderRef}>
+                {categoryDataMain.map((category) => (
+                  <div key={category.id} className={styles.categoryItem}>
+                    <img src={category.categoryImg} alt={category.category} />
+                    <p>{category.category}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+            
+          <div className={styles.belowCategoryImgMain}>
+              <img src={chips} alt='chips' />
+              <img src={gro} alt='chips' />
+              <img src={tasty} alt='chips' />
+          </div>
+          
+          <Carousel
+            autoPlay={true}
+            interval={3000}
+            infiniteLoop={true}
+            showArrows={true}
+            showIndicators={false}
+            showStatus={false}
+            showThumbs={false}
+            dynamicHeight={true}
+            className={styles.carousel}
+          >
+            <div className={styles.bannerImg}>
+              <img src={test1} alt='test1' />
+            </div>
+          </Carousel>
+          
+          <div className={styles.MostPopulerMain}>
+              <div className={styles.MostPopulerMainHeader}>
+                  <h2 style={{color:'black'}}>Most Populer</h2>
+                  <button className={styles.MostPopulerMainHeaderBtn}>Show More</button>
+              </div>
+              <div className={styles.ProductGrid}>
+               {categoryDataMain.slice(0,8).map((item) => (
+                  <div className={styles.ProductItem}>
+                    <img src={item.productImg} alt="Jasmine Soap" />
+                    <h3>{item.productName}</h3>
+                    <Rating name="read-only" value={item.rating} readOnly size="small" />
+                    <p className={styles.Price}>₹{item.price}</p>
+                  </div>
+               ))}
+              </div>
+          </div>
+          
+          <div className={styles.MostPopulerMainBrand}>
+            <div className={styles.MostPopulerMainBrandHeader}>
+              <h2 style={{ color: 'black' }}>Popular Brands</h2>
+              <div className={styles.MainPagebtn}>
+                <button onClick={() => scroll('left')} className={styles.navButton}>&lt;</button>
+                <button onClick={() => scroll('right')} className={styles.navButton}>&gt;</button>
+              </div>
+            </div>
+            <div ref={sliderRef} className={styles.brandGrid}>
+              {categoryDataMain.map((bd) => (
+                <div key={bd.id} className={styles.brandItem}>
+                  <img src={brandImage} alt='brand' className={styles.brandLogo} />
+                  <p className={styles.brandName}>{bd.brand}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+
+        </div>
+      </Layout>
+    </div>
+  );
 }

@@ -17,14 +17,8 @@
     align-items: center;
   }
   
-  .navbar-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  #logo {
-    background-size: contain;
-    width: 90px;
+  .logo {
+    width: 100px;
     height: 40px;
     margin-right: 20px;
   }
@@ -33,23 +27,28 @@
     margin: 0 10px;
     text-decoration: none;
     color: black;
+    align-self: center;
   }
-  .nav-link:hover{
+  
+  .nav-link:hover {
     color: orange;
   }
   
   .dropdown {
     position: relative;
     display: inline-block;
+    align-self: center;
   }
   
   .dropbtn {
+    align-self: center;
     background: none;
     border: none;
     font-size: 16px;
     cursor: pointer;
   }
-  .dropbtn:hover{
+  
+  .dropbtn:hover {
     color: orange;
   }
   
@@ -77,40 +76,36 @@
     display: block;
   }
   
- .navbar-right .search-container {
+  .navbar-right .search-container {
     display: flex;
     align-items: center;
     position: relative;
   }
   
-  .navbar-right .search-icon, .close-icon {
+  .navbar-right .search-icon,
+  .close-icon {
     position: absolute;
     margin: 0 10px;
     cursor: pointer;
   }
-/*   
-  .search-icon {
-    left: 10px;
-  }
-   */
+  
   .close-icon {
     right: 16px;
   }
   
- .navbar-right .search {
-    padding: 5px 10px 5px 30px;
-    margin-right: 20px;
-    border-radius: 30px;
-    /* border: 1px solid #ddd; */
-    border: none;
-    width: 200px;
-    height: 30px;
-    background-color:#f9f9f9 ;
-  }
-  .search:hover{
-    border: 1px solid red;
+  .navbar-right .search {
+    padding: 5px 10px 5px 30px !important;
+    margin-right: 20px !important;
+    border-radius: 30px !important;
+    border: none !important;
+    width: 200px !important;
+    height: 30px !important;
+    background-color: #f9f9f9 !important;
   }
   
+  .search:hover {
+    border: 1px solid red !important;
+  }
   
   .nav-icon {
     margin: 0 10px;
@@ -127,5 +122,52 @@
   .language-selector img {
     height: 20px;
     margin-right: 5px;
+  }
+  
+  .footer {
+    display: none; /* Hidden by default */
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer .nav-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+  }
+  
+  .footer .nav-icon span {
+    font-size: 12px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar-left .nav-link,
+    .navbar-left .dropdown,
+    .navbar-right .nav-icon,
+    .navbar-right .language-selector {
+      display: none; /* Hide these elements on small screens */
+    }
+  
+    .footer {
+      display: flex; /* Show footer on small screens */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      align-items: end;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .search {
+      width: 150px !important;
+    }
   }
   
