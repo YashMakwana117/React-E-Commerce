@@ -39,42 +39,68 @@
     align-self: center;
   }
   
-  .dropbtn {
-    align-self: center;
-    background: none;
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropbtn{
     border: none;
-    font-size: 16px;
+    background: transparent;
     cursor: pointer;
   }
-  
-  .dropbtn:hover {
+
+  .dropbtn:hover{
     color: orange;
   }
-  
-  .dropdown-content {
-    display: none;
+
+ .dropdownContent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    min-width: 400px;
+    padding: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 1;
+    margin-top: 5px;
+    border-radius: 8px;
   }
   
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+  .option {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s;
   }
   
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
+  .option:hover {
+    background-color: #f0f0f0;
   }
   
-  .dropdown:hover .dropdown-content {
-    display: block;
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    color: #0066cc; /* Adjust color as needed */
   }
   
+  .text h3 {
+    margin: 0 0 5px 0;
+    font-size: 1em;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .text p {
+    margin: 0;
+    color: #666;
+    font-size: 0.8em;
+  }
+
   .navbar-right .search-container {
     display: flex;
     align-items: center;
@@ -87,8 +113,6 @@
     cursor: pointer;
     /* padding-bottom: 8px; */
   }
-
-  
   
   .search {
     padding: 5px 10px 5px 30px !important;

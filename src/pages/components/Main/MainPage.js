@@ -11,10 +11,14 @@ import gro from '../../../assets/image/super.jpg';
 import tasty from '../../../assets/image/tasty.png';
 import { Rating } from '@mui/material';
 import brandImage from '../../../assets/image/dabur.png';
+import LinearProgress from '@mui/material/LinearProgress';
+import logo from '../../../assets/image/order360.jpg';
+
 
 
 export default function MainPage() {
   const [categoryDataMain, setCategoryDataMain] = useState([]);
+  const [loading,setLoading] = useState(true);
 
   useEffect(() => {
     const fetchCategoryData = async () => {
@@ -24,6 +28,8 @@ export default function MainPage() {
         setCategoryDataMain(data);
       } catch (error) {
         console.log('Error fetching data from API:', error);
+      }finally{
+        setLoading(false);
       }
     };
 
@@ -31,8 +37,7 @@ export default function MainPage() {
   }, []);
 
   const sliderRef = useRef(null);
-  // const sliderBrand = useRef(null);
-
+  
   const scroll = (direction) => {
     if (sliderRef.current) {
       const { scrollLeft, clientWidth } = sliderRef.current;
@@ -41,9 +46,12 @@ export default function MainPage() {
     }
   };
 
+ 
   return (
     <div className={styles.MainPage}>
+
       <Layout>
+        {loading && <LinearProgress/>}
         <div className={styles.MainPageMain}>
           <Carousel
             autoPlay={true}
@@ -126,27 +134,64 @@ export default function MainPage() {
               </div>
           </div>
           
-          <div className={styles.MostPopulerMainBrand}>
-            <div className={styles.MostPopulerMainBrandHeader}>
-              <h2 style={{ color: 'black' }}>Popular Brands</h2>
-              <div className={styles.MainPagebtn}>
-                <button onClick={() => scroll('left')} className={styles.navButton}>&lt;</button>
-                <button onClick={() => scroll('right')} className={styles.navButton}>&gt;</button>
-              </div>
-            </div>
-            <div ref={sliderRef} className={styles.brandGrid}>
-              {categoryDataMain.map((bd) => (
-                <div key={bd.id} className={styles.brandItem}>
-                  <img src={brandImage} alt='brand' className={styles.brandLogo} />
-                  <p className={styles.brandName}>{bd.brand}</p>
+          <div className={styles.brandCarousel}>
+            <h2 style={{color:'black'}}>Popular Brands</h2>
+            <Carousel
+                autoPlay={true}
+                showArrows={true}
+                showStatus={false}
+                showThumbs={false}
+                infiniteLoop={true}
+                centerMode={true}
+                centerSlidePercentage={20}
+                emulateTouch={true}
+                showIndicators={false}
+                swipeable={true}
+              >
+              {categoryDataMain.map((item, index) => (
+                <div key={index} className={styles.brandItem}>  
+                  <img src={brandImage} alt={item.brand} />
+                  <p className={styles.brandName}>{item.brand}</p>
                 </div>
               ))}
+            </Carousel>
+          </div>
+        </div>
+        </Layout>
+
+
+        <footer className={styles.footer}>
+          <div className={styles.container}>
+            <div className={styles.logo}>
+              <img src={logo} alt="Order 360 Logo" />
+            </div>
+            <div className={styles.newsletter}>
+              <h3>Subscribe to our newsletter</h3>
+              <form className={styles.subscribeForm}>
+                <input type="email" placeholder="Your email address" />
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+            <nav className={styles.footerNav}>
+              <ul>
+                <li><a href="/support">Support</a></li>
+                <li><a href="/legal">Legal</a></li>
+              </ul>
+            </nav>
+            <div className={styles.contact}>
+              <h3>Contact</h3>
+              <p>Surat Gujarat</p>
+              <p>info@cygnux.in</p>
+              <p>9898989898</p>
             </div>
           </div>
-
-
-        </div>
-      </Layout>
+          <hr/>
+          <div className={styles.copyright}>
+            <p>cygnux</p>
+          </div>
+          
+        </footer>
+    
     </div>
   );
 }

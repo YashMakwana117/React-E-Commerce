@@ -17,6 +17,7 @@ const Layout = ({ children }) => {
     const [openCategoryDrawer,setOpenCategoryDrawer] = useState(false);
     const [openProfileDrawer,setOpenProfileDrawer] = useState(false);
     const [categoryData,setCategoryData] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleOpenCategoryDrawer = () => setOpenCategoryDrawer(true);
     const handleCloseCategoryDrawer = () => setOpenCategoryDrawer(false);
@@ -36,20 +37,37 @@ const Layout = ({ children }) => {
         fetchCategoryData();
     },[]);
 
+    const toggleDropdown = () => {
+      setIsOpen(!isOpen);
+    };
+
+    const uniqueCategories = [...new Map(categoryData.map(item => [item.category, item])).values()];
+
   return (
     <>
       <nav className={styles.navbar}>
         <div className={styles["navbar-left"]}>
           <img src={order360Image} alt="Order 360 Logo" className={styles.logo} />
-          <a href="/" className={styles["nav-link"]}>Home</a>
+          <a href="/Home" className={styles["nav-link"]}>Home</a>
+
+
           <div className={styles.dropdown}>
-            <button className={styles.dropbtn}>Categories</button>
-            <div className={styles["dropdown-content"]}>
-              <a href="/">Category 1</a>
-              <a href="/">Category 2</a>
-              <a href="/">Category 3</a>
-            </div>
+            <button className={styles.dropbtn} onClick={toggleDropdown}>Categories</button>
+            {isOpen && (
+              <div className={styles.dropdownContent}>
+                {uniqueCategories.map((optionCategory) => (
+                  <div key={optionCategory.id} className={styles.option}>
+                    <img src={optionCategory.categoryImg} alt={optionCategory.category} className={styles.icon} />
+                    <div className={styles.text}>
+                      <h3>{optionCategory.category}</h3>
+                      <p>{optionCategory.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
+
           <a href="/" className={styles["nav-link"]}>Offers</a>
         </div>
         <div className={styles["navbar-right"]}>
