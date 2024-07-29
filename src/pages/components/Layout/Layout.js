@@ -11,6 +11,7 @@ import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
+import { useNavigate } from "react-router-dom";
 
 
 const Layout = ({ children }) => {
@@ -18,6 +19,7 @@ const Layout = ({ children }) => {
     const [openProfileDrawer,setOpenProfileDrawer] = useState(false);
     const [categoryData,setCategoryData] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleOpenCategoryDrawer = () => setOpenCategoryDrawer(true);
     const handleCloseCategoryDrawer = () => setOpenCategoryDrawer(false);
@@ -43,6 +45,10 @@ const Layout = ({ children }) => {
 
     const uniqueCategories = [...new Map(categoryData.map(item => [item.category, item])).values()];
 
+    const handleCategory = (category) => {
+      navigate(`/category/${encodeURIComponent(category)}`);
+    }
+
   return (
     <>
       <nav className={styles.navbar}>
@@ -54,11 +60,11 @@ const Layout = ({ children }) => {
           <div className={styles.dropdown}>
             <button className={styles.dropbtn} onClick={toggleDropdown}>Categories</button>
             {isOpen && (
-              <div className={styles.dropdownContent}>
+              <div className={styles.dropdownContent} >
                 {uniqueCategories.map((optionCategory) => (
-                  <div key={optionCategory.id} className={styles.option}>
+                  <div key={optionCategory.id} className={styles.option} onClick={() => handleCategory(optionCategory.category)}>
                     <img src={optionCategory.categoryImg} alt={optionCategory.category} className={styles.icon} />
-                    <div className={styles.text}>
+                    <div className={styles.text} >
                       <h3>{optionCategory.category}</h3>
                       <p>{optionCategory.description}</p>
                     </div>

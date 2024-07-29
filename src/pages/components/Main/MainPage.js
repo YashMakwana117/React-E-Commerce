@@ -13,12 +13,14 @@ import { Rating } from '@mui/material';
 import brandImage from '../../../assets/image/dabur.png';
 import LinearProgress from '@mui/material/LinearProgress';
 import logo from '../../../assets/image/order360.jpg';
+import { useNavigate } from 'react-router-dom';
 
 
 
 export default function MainPage() {
   const [categoryDataMain, setCategoryDataMain] = useState([]);
   const [loading,setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCategoryData = async () => {
@@ -46,6 +48,9 @@ export default function MainPage() {
     }
   };
 
+  const handleCategoryClick = (category) => {
+    navigate(`/category/${encodeURIComponent(category)}`);
+  };
  
   return (
     <div className={styles.MainPage}>
@@ -86,7 +91,7 @@ export default function MainPage() {
             <div className={styles.MainPageCategoriesDiv}>
               <div className={styles.categoriesContainer} ref={sliderRef}>
                 {categoryDataMain.map((category) => (
-                  <div key={category.id} className={styles.categoryItem}>
+                  <div key={category.id} className={styles.categoryItem} onClick={() => handleCategoryClick(category.category)}>
                     <img src={category.categoryImg} alt={category.category} />
                     <p>{category.category}</p>
                   </div>

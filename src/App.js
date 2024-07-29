@@ -20,13 +20,15 @@ import POS from './pages/components/Admin/POS/POS';
 import PosOrder from './pages/components/Admin/POSOrder/PosOrder';
 import ReturnOrder from './pages/components/Admin/ReturnOrder/ReturnOrder';
 import OnlineOrder from './pages/components/Admin/OnlineOrder/OnlineOrder';
+import CateGories from './pages/components/Main/Categories/CateGories';
+
 
 export default function App() {
   const [collapsed, setCollapsed] = useState(false);
   const [loading, setLoading] = useState(true);
   
   // Define routes where SideBar should be hidden
-  const hideSideBarRoutes = ['/', '/Home'];
+  const hideSideBarRoutes = ['/', '/Home','/category/:category'];
 
   // Function to determine if SideBar should be hidden
   const shouldHideSideBar = (path) => {
@@ -62,6 +64,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/Home" element={<HomePage />} />
+          {/* <Route path="/cate" element={<CateGories />} /> */}
+          <Route path="/category/:category" element={<CateGories />} />
+          {/* <Route path="/category" element={<CateGories />} /> */}
           {/* Routes where SideBar should be displayed */}
           <Route path="/dashbord" element={<Dashbord />} />
           <Route path="/administrator" element={<Administrator />} />
@@ -79,6 +84,7 @@ export default function App() {
           <Route path='/posOrder' element={<PosOrder/>}/>
           <Route path='/online-orders' element={<OnlineOrder/>}/>
           <Route path='/return-orders' element={<ReturnOrder/>}/>
+          
           {/* <Route path='/noty' element={<SuppierSetting/>}/> */}
         </Routes>
 
