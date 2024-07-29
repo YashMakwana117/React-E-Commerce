@@ -56,6 +56,7 @@
   
   .sortBy li, .brandFilter li {
     margin-bottom: 5px;
+    cursor: pointer;
   }
   
   .priceRange {
@@ -63,6 +64,62 @@
     justify-content: space-between;
     margin-top: 5px;
   }
+
+.dispFilterIcon{
+    display: none;
+}
+
+/* --------------------------------------- */
+
+@media (min-width: 1025px) and (max-width: 1500px) {
+    .CategoryPageMain {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+}
+
+@media(min-width: 769px) and (max-width: 1024px){
+    .CategoryPageMain{
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px){
+    .CategoryPageMain{
+        margin: 0;
+    }
+}
+
+@media (max-width: 576px){
+    .dispFilterIcon{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .hideHeading{
+        display: none;
+    }
+    .CategoryPageMain{
+        margin: 0;
+    }
+    .filterSection{
+        display: none;
+    }
+    .filterSectionDrawer{
+        width: 300px;
+        padding: 10px;
+    }
+    .priceFilter{
+        margin-right: 10px;
+    }
+    .iconBox{
+        display: flex;
+        align-items: center;
+        border-radius: 6px;
+        border: none;
+    }
+}
+
 
   /* ---------------------------------------- */
   

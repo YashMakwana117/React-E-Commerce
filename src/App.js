@@ -26,13 +26,17 @@ import CateGories from './pages/components/Main/Categories/CateGories';
 export default function App() {
   const [collapsed, setCollapsed] = useState(false);
   const [loading, setLoading] = useState(true);
+  // const location = useLocation();
   
   // Define routes where SideBar should be hidden
-  const hideSideBarRoutes = ['/', '/Home','/category/:category'];
+  const hideSideBarRoutes = ['/', '/Home','/category/:category','/category'];
 
   // Function to determine if SideBar should be hidden
   const shouldHideSideBar = (path) => {
-    return hideSideBarRoutes.includes(path);
+    return hideSideBarRoutes.some(route => {
+      const regex = new RegExp(`^${route.replace(/:\w+/g, '[^/]+')}$`);
+      return regex.test(path);
+    });
   };
 
   useEffect(() => {

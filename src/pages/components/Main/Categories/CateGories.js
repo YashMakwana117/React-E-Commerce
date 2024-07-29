@@ -2,13 +2,19 @@ import React, { useEffect, useState } from 'react';
 import styles from './CateGories.module.css';
 import Layout from '../../Layout/Layout';
 import { Rating } from '@mui/material'; // Import MUI Rating component
-import productImg from '../../../../assets/image/roll.png'
 import { useParams } from 'react-router-dom';
+import Slider from '@mui/material/Slider';
+import Drawer from '@mui/material/Drawer';
+import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
+
 
 export default function CateGories() {
 
     const {category} = useParams();
     const [categoryWiseData,setCategoryWiseData] = useState([]);
+    const [selectedPrice,setSelectedPrice] = useState(1000);
+    const [selectBrand,setSelectBrand] = useState('');
+    const [openDrawer,setOpenDrawer] = useState(false)
 
     useEffect(() => {
         const fetchProductDataCategoryWise = async () => {
@@ -26,13 +32,45 @@ export default function CateGories() {
 
     const uniqueBrands = [...new Set(categoryWiseData.map(item => item.brand))];
 
+    const handleChangePrice = (e,newValue) => {
+        setSelectedPrice(newValue);
+    };
+
+    // const filterRangeData = categoryWiseData.filter(prod => prod.price <= selectedPrice);
+
+    const handleChangeBrand = (e) => {
+        const brand = e.target.value;
+        setSelectBrand((prevSelectedBrands) => 
+            prevSelectedBrands.includes(brand)
+                ? prevSelectedBrands.filter((b) => b !== brand)
+                : [...prevSelectedBrands, brand]
+        );
+    }
+
+    const filterDataWithBrand = categoryWiseData.filter((bd) => {
+        const matchRange = bd.price <= selectedPrice;
+        const matchBrand = selectBrand.length === 0 || selectBrand.includes(bd.brand);
+        return matchRange && matchBrand;
+    });
+
+    const handleOpenDrawer = () => setOpenDrawer(true);
+    const handleCloseDrawer = () => setOpenDrawer(false);
+
   return (
     <div className={styles.CategoryPage}>
       <Layout>
         <div className={styles.CategoryPageMain}>
           <h1>{category ? category : 'Category'}</h1>
-          <h2 style={{color:'black'}}>Explore All Products <span>({categoryWiseData.length} Products Found)</span></h2>
+          <h2 style={{color:'black'}} className={styles.hideHeading}>Explore All Products <span>({categoryWiseData.length} Products Found)</span></h2>
           
+            <div className={styles.dispFilterIcon}>
+                <h2 style={{color:'black'}}>Explore All Products <span>({categoryWiseData.length} Products Found)</span></h2>
+                <button className={styles.iconBox} onClick={handleOpenDrawer}>
+                    <FilterAltOutlinedIcon style={{fontSize:'40px',color:'#f23d13'}}/>
+                </button>
+            </div>
+
+
           <div className={styles.mainContent}>
             <div className={styles.filterSection}>
               <div className={styles.sortBy}>
@@ -47,10 +85,17 @@ export default function CateGories() {
 
               <div className={styles.priceFilter}>
                 <h3>Price</h3>
-                <input type="range" min="0" max="649" />
+                <Slider
+                value={selectedPrice}
+                min={40}
+                max={1000}
+                onChange={handleChangePrice}
+                aria-labelledby="input-slider"
+                valueLabelDisplay="auto"
+                />
                 <div className={styles.priceRange}>
                   <span>0</span>
-                  <span>649</span>
+                  <span>{selectedPrice}</span>
                 </div>
               </div>
 
@@ -58,14 +103,14 @@ export default function CateGories() {
                 <h3>Brand</h3>
                 {uniqueBrands.map((brand, index) => (
                     <ul key={index}>
-                        <li><input type="checkbox" />{brand}</li>
+                        <li><input type="checkbox" value={brand} checked={selectBrand.includes(brand)} onChange={handleChangeBrand} />{brand}</li>
                     </ul>
                 ))}
               </div>
             </div>
 
             <div className={styles.productsGrid}>
-                {categoryWiseData.map((card, index) => (
+                {filterDataWithBrand.map((card, index) => (
                 <div key={index} className={styles.productCard}>
                     <img src={card.productImg} alt={card.productName} className={styles.productImage} />
                     <div className={styles.productInfo}>
@@ -82,6 +127,53 @@ export default function CateGories() {
           </div>
         </div>
       </Layout>
+
+      <Drawer open={openDrawer} onClose={handleCloseDrawer}>
+
+        <div className={styles.filterSectionDrawer}>
+            <h2 style={{color:'black'}}>Choose the option to Filter the Product</h2>
+            <hr/>
+              <div className={styles.sortBy}>
+                <h3>Sort By</h3>
+                <ul>
+                  <li><input type="radio" name="sort" /> Newest</li>
+                  <li><input type="radio" name="sort" /> Price Low To High</li>
+                  <li><input type="radio" name="sort" /> Price High To Low</li>
+                  <li><input type="radio" name="sort" /> Top Rated</li>
+                </ul>
+              </div>
+
+              <div className={styles.priceFilter}>
+                <h3>Price</h3>
+                <Slider
+                value={selectedPrice}
+                min={40}
+                max={1000}
+                onChange={handleChangePrice}
+                aria-labelledby="input-slider"
+                valueLabelDisplay="auto"
+                />
+                <div className={styles.priceRange}>
+                  <span>0</span>
+                  <span>{selectedPrice}</span>
+                </div>
+              </div>
+
+              <div className={styles.brandFilter}>
+                <h3>Brand</h3>
+                {uniqueBrands.map((brand, index) => (
+                    <ul key={index}>
+                        <li><input type="checkbox" value={brand} checked={selectBrand.includes(brand)} onChange={handleChangeBrand} />{brand}</li>
+                    </ul>
+                ))}
+              </div>
+              <button style={{color:'white',backgroundColor:'red',border:'none',borderRadius:'6px',width:'90px',height:'30px'}} onClick={handleCloseDrawer}>Close</button>
+            </div>        
+      </Drawer>
+
+
+
+
     </div>
   );
 }
