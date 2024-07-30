@@ -27,7 +27,7 @@ export default function MainPage() {
       try {
         const response = await fetch('https://66a0dcd07053166bcabd259b.mockapi.io/homeData');
         const data = await response.json();
-        processCategoryData(data);
+        setCategoryDataMain(data);
       } catch (error) {
         console.log('Error fetching data from API:', error);
       }finally{
@@ -63,16 +63,15 @@ export default function MainPage() {
     navigate('/populerProduct');
   }
 
-
   const uniqueCategories = [...new Map(categoryDataMain.map(item => [item.category, item])).values()];
- 
-  const processCategoryData = (data) => {
-    const filteredData = data.filter(item => item.rating > 4);
-    const shuffleData = filteredData.sort(() => Math.random() - 0.5);
-    setCategoryDataMain(shuffleData);
-  };
 
-
+  
+  const highRatedCategories = categoryDataMain.filter(item => item.rating > 4);
+  const shuffledHighRatedCategories = highRatedCategories.sort(() => Math.random() - 0.5);
+  
+  const handleProductDiv = (product) => {
+    navigate(`/productDetail/${product.id}`);
+  }
 
   return (
     <div className={styles.MainPage}>
@@ -150,8 +149,8 @@ export default function MainPage() {
                   <button className={styles.MostPopulerMainHeaderBtn} onClick={handlePopulerProduct}>Show More</button>
               </div>
               <div className={styles.ProductGrid}>
-               {categoryDataMain.slice(0,8).map((item) => (
-                  <div className={styles.ProductItem} key={item.id}>
+               {shuffledHighRatedCategories.slice(0,8).map((item) => (
+                  <div className={styles.ProductItem} key={item.id} onClick={() => handleProductDiv(item)}>
                     <img src={item.productImg} alt="Jasmine Soap" />
                     <h3>{item.productName}</h3>
                     <Rating name="read-only" value={item.rating} readOnly size="small" />

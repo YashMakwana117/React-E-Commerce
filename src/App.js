@@ -22,6 +22,7 @@ import ReturnOrder from './pages/components/Admin/ReturnOrder/ReturnOrder';
 import OnlineOrder from './pages/components/Admin/OnlineOrder/OnlineOrder';
 import CateGories from './pages/components/Main/Categories/CateGories';
 import MostPopulerProduct from './pages/components/Main/MostPopulerProduct/MostPopulerProduct';
+import ProductDetail from './pages/components/ProductDetailPage/ProductDetailPage';
 
 
 export default function App() {
@@ -30,7 +31,7 @@ export default function App() {
   // const location = useLocation();
   
   // Define routes where SideBar should be hidden
-  const hideSideBarRoutes = ['/', '/Home','/category/:category','/category','/populerProduct'];
+  const hideSideBarRoutes = ['/', '/Home','/category/:category','/category','/populerProduct','/productDetail/:productId'];
 
   // Function to determine if SideBar should be hidden
   const shouldHideSideBar = (path) => {
@@ -71,6 +72,7 @@ export default function App() {
           <Route path="/Home" element={<HomePage />} />
           <Route path="/category/:category" element={<CateGories />} />
           <Route path="/populerProduct" element={<MostPopulerProduct />} />
+          <Route path="/productDetail/:productId" element={<ProductDetail />} />
           {/* Routes where SideBar should be displayed */}
           <Route path="/dashbord" element={<Dashbord />} />
           <Route path="/administrator" element={<Administrator />} />
