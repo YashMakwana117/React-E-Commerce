@@ -21,6 +21,7 @@ import PosOrder from './pages/components/Admin/POSOrder/PosOrder';
 import ReturnOrder from './pages/components/Admin/ReturnOrder/ReturnOrder';
 import OnlineOrder from './pages/components/Admin/OnlineOrder/OnlineOrder';
 import CateGories from './pages/components/Main/Categories/CateGories';
+import MostPopulerProduct from './pages/components/Main/MostPopulerProduct/MostPopulerProduct';
 
 
 export default function App() {
@@ -29,7 +30,7 @@ export default function App() {
   // const location = useLocation();
   
   // Define routes where SideBar should be hidden
-  const hideSideBarRoutes = ['/', '/Home','/category/:category','/category'];
+  const hideSideBarRoutes = ['/', '/Home','/category/:category','/category','/populerProduct'];
 
   // Function to determine if SideBar should be hidden
   const shouldHideSideBar = (path) => {
@@ -68,9 +69,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/Home" element={<HomePage />} />
-          {/* <Route path="/cate" element={<CateGories />} /> */}
           <Route path="/category/:category" element={<CateGories />} />
-          {/* <Route path="/category" element={<CateGories />} /> */}
+          <Route path="/populerProduct" element={<MostPopulerProduct />} />
           {/* Routes where SideBar should be displayed */}
           <Route path="/dashbord" element={<Dashbord />} />
           <Route path="/administrator" element={<Administrator />} />

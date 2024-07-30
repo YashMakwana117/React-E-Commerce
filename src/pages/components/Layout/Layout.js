@@ -117,13 +117,12 @@ const Layout = ({ children }) => {
                 <h2>Categories</h2>
                 <hr />
                 <div className={styles.DrawerMainCateList}>
-                    {[...new Set(categoryData.map(cate => cate.category))]
-                        .map((cat, index) => (
-                            <a href="/" className={styles.categoryLink} key={index}>{cat}</a>
-                        ))
-                    }
+                    {uniqueCategories.map((cat,index) => (
+                      <div className={styles.categoryLink} key={index} onClick={() => handleCategory(cat.category)}>{cat.category}</div>
+                    ))}
                 </div>
             </div>
+                <button style={{color:'white',backgroundColor:'red',border:'none',borderRadius:'6px',width:'90px',height:'30px',marginTop:'30px',marginLeft:'10px'}} onClick={handleCloseCategoryDrawer}>Close</button>
         </Drawer>
 
         <Drawer open={openProfileDrawer} onClose={closeProfile}>

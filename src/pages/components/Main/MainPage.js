@@ -27,7 +27,7 @@ export default function MainPage() {
       try {
         const response = await fetch('https://66a0dcd07053166bcabd259b.mockapi.io/homeData');
         const data = await response.json();
-        setCategoryDataMain(data);
+        processCategoryData(data);
       } catch (error) {
         console.log('Error fetching data from API:', error);
       }finally{
@@ -36,6 +36,13 @@ export default function MainPage() {
     };
 
     fetchCategoryData();
+
+    const intervalId = setInterval(() => {
+      fetchCategoryData();
+    },500000);
+
+    return () => clearInterval(intervalId);
+
   }, []);
 
   const sliderRef = useRef(null);
@@ -51,7 +58,22 @@ export default function MainPage() {
   const handleCategoryClick = (category) => {
     navigate(`/category/${encodeURIComponent(category)}`);
   };
+
+  const handlePopulerProduct = () => {
+    navigate('/populerProduct');
+  }
+
+
+  const uniqueCategories = [...new Map(categoryDataMain.map(item => [item.category, item])).values()];
  
+  const processCategoryData = (data) => {
+    const filteredData = data.filter(item => item.rating > 4);
+    const shuffleData = filteredData.sort(() => Math.random() - 0.5);
+    setCategoryDataMain(shuffleData);
+  };
+
+
+
   return (
     <div className={styles.MainPage}>
 
@@ -90,7 +112,7 @@ export default function MainPage() {
             </div>
             <div className={styles.MainPageCategoriesDiv}>
               <div className={styles.categoriesContainer} ref={sliderRef}>
-                {categoryDataMain.map((category) => (
+                {uniqueCategories.map((category) => (
                   <div key={category.id} className={styles.categoryItem} onClick={() => handleCategoryClick(category.category)}>
                     <img src={category.categoryImg} alt={category.category} />
                     <p>{category.category}</p>
@@ -125,11 +147,11 @@ export default function MainPage() {
           <div className={styles.MostPopulerMain}>
               <div className={styles.MostPopulerMainHeader}>
                   <h2 style={{color:'black'}}>Most Populer</h2>
-                  <button className={styles.MostPopulerMainHeaderBtn}>Show More</button>
+                  <button className={styles.MostPopulerMainHeaderBtn} onClick={handlePopulerProduct}>Show More</button>
               </div>
               <div className={styles.ProductGrid}>
                {categoryDataMain.slice(0,8).map((item) => (
-                  <div className={styles.ProductItem}>
+                  <div className={styles.ProductItem} key={item.id}>
                     <img src={item.productImg} alt="Jasmine Soap" />
                     <h3>{item.productName}</h3>
                     <Rating name="read-only" value={item.rating} readOnly size="small" />
