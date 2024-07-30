@@ -207,13 +207,12 @@ export default function MainPage() {
             <div className={styles.contact}>
               <h3>Contact</h3>
               <p>Surat Gujarat</p>
-              <p>info@cygnux.in</p>
               <p>9898989898</p>
             </div>
           </div>
           <hr/>
           <div className={styles.copyright}>
-            <p>cygnux</p>
+            <p>yash</p>
           </div>
           
         </footer>
