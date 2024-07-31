@@ -12,7 +12,7 @@ import tasty from '../../../assets/image/tasty.png';
 import { Rating } from '@mui/material';
 import brandImage from '../../../assets/image/dabur.png';
 import LinearProgress from '@mui/material/LinearProgress';
-import logo from '../../../assets/image/order360.jpg';
+// import logo from '../../../assets/image/order360.jpg';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -66,7 +66,7 @@ export default function MainPage() {
   const uniqueCategories = [...new Map(categoryDataMain.map(item => [item.category, item])).values()];
 
   
-  const highRatedCategories = categoryDataMain.filter(item => item.rating > 4);
+  const highRatedCategories = categoryDataMain.filter(item => item.rating >= 4 && item.rating <= 5);
   const shuffledHighRatedCategories = highRatedCategories.sort(() => Math.random() - 0.5);
   
   const handleProductDiv = (product) => {
@@ -186,7 +186,7 @@ export default function MainPage() {
         </Layout>
 
 
-        <footer className={styles.footer}>
+        {/* <footer className={styles.footer}>
           <div className={styles.container}>
             <div className={styles.logo}>
               <img src={logo} alt="Order 360 Logo" />
@@ -215,7 +215,7 @@ export default function MainPage() {
             <p>yash</p>
           </div>
           
-        </footer>
+        </footer> */}
     
     </div>
   );

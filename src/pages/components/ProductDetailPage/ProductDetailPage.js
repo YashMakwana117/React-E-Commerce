@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Rating, LinearProgress,Modal, Box, TextField, Button } from "@mui/material";
 import styles from "./ProductDetailPage.module.css";
 import Layout from "../Layout/Layout";
@@ -13,6 +13,7 @@ export default function BuyNowPage() {
   const [openModal,setOpenModal] = useState(false);
   const [newRating,setNewRating] = useState(0);
   const [newComment,setNewComment] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProductById = async () => {
@@ -71,12 +72,20 @@ export default function BuyNowPage() {
     1: "#f44336",
   };
 
-  const handleOpenModal = () => setOpenModal(true);
+  const session = JSON.parse(localStorage.getItem('user'));
+  const handleOpenModal = () => {
+    if(session) {
+      console.log(session.name);
+      setOpenModal(true)
+    }else{
+      navigate('/');
+    }
+  };
   const handleCloseModal = () => setOpenModal(false);
 
   const handleAddRating = async () => {
     const newReview = {
-      username: 'test',
+      username: session.name,
       rating: newRating,
       comment: newComment,
     };

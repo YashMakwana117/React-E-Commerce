@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Layout from '../../Layout/Layout'
 import styles from './MostPopulerProduct.module.css';
 import { Rating,LinearProgress,Pagination } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -11,6 +12,7 @@ export default function MostPopulerProduct() {
     const [loading,setLoading] = useState(true);
     const [page,setPage] = useState(1);
     const productPerPage = 10;
+    const navigate = useNavigate();
 
 
     useEffect(() => {
@@ -28,7 +30,7 @@ export default function MostPopulerProduct() {
         fetchMostPopulerProduct();
     },[]);
 
-    const getPopulerProduct = mostPopulerProduct.filter(item => item.rating > 4);
+    const getPopulerProduct = mostPopulerProduct.filter(item => item.rating >= 4 && item.rating <= 5);
 
     const indexOfLastProduct = page * productPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productPerPage;
@@ -40,6 +42,9 @@ export default function MostPopulerProduct() {
         setPage(newPage);
     }
 
+    const handleProductDiv = (product) => {
+        navigate(`/productDetail/${product.id}`);
+    }
 
   return (
     <div className={styles.MostPopulerProduct}>
@@ -51,7 +56,7 @@ export default function MostPopulerProduct() {
                 {loading && <LinearProgress/> } 
                 <div className={styles.productsGrid}>
                     {currentProducts.map((card, index) => (
-                        <div key={index} className={styles.productCard}>
+                        <div key={index} className={styles.productCard} onClick={(e) => handleProductDiv(card)}>
                             <img src={card.productImg} alt={card.productName} className={styles.productImage} />
                             <div className={styles.productInfo}>
                             <h3 className={styles.productName}>{card.productName}</h3>

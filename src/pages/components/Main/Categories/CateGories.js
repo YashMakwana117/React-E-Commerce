@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './CateGories.module.css';
 import Layout from '../../Layout/Layout';
 import { Rating } from '@mui/material'; // Import MUI Rating component
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Slider from '@mui/material/Slider';
 import Drawer from '@mui/material/Drawer';
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
@@ -14,7 +14,8 @@ export default function CateGories() {
     const [categoryWiseData,setCategoryWiseData] = useState([]);
     const [selectedPrice,setSelectedPrice] = useState(1000);
     const [selectBrand,setSelectBrand] = useState('');
-    const [openDrawer,setOpenDrawer] = useState(false)
+    const [openDrawer,setOpenDrawer] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchProductDataCategoryWise = async () => {
@@ -55,6 +56,10 @@ export default function CateGories() {
 
     const handleOpenDrawer = () => setOpenDrawer(true);
     const handleCloseDrawer = () => setOpenDrawer(false);
+
+    const handleProductDiv = (product) => {
+      navigate(`/productDetail/${product.id}`);
+    }
 
   return (
     <div className={styles.CategoryPage}>
@@ -111,7 +116,7 @@ export default function CateGories() {
 
             <div className={styles.productsGrid}>
                 {filterDataWithBrand.map((card, index) => (
-                <div key={index} className={styles.productCard}>
+                <div key={index} className={styles.productCard} onClick={(e) => handleProductDiv(card)}>
                     <img src={card.productImg} alt={card.productName} className={styles.productImage} />
                     <div className={styles.productInfo}>
                     <h3 className={styles.productName}>{card.productName}</h3>
