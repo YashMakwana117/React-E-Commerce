@@ -1,0 +1,115 @@
+.outerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .imageSection {
+    flex: 1;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .imageSection img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .formSection {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  h2 {
+    color: #ff4500;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  
+  .inputGroup {
+    margin-bottom: 1rem;
+  }
+  
+  .inputGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .inputGroup input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .rememberForgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .rememberForgot a {
+    color: #ff4500;
+    text-decoration: none;
+  }
+  
+  .submitButton {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: #e03e00;
+  }
+
+  .signupbtn{
+    background-color: transparent;
+    border: none;
+    color: #e03e00;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 1024px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .imageSection {
+      display: none;
+    }
+  
+    .formSection {
+      width: 100%;
+      padding: 1rem;
+    }
+  }
+  
