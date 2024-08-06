@@ -218,6 +218,7 @@ export default function Dashbord() {
         {/* chart start here */}
 
         <Chart />
+        
       </div>
     </div>
   );
